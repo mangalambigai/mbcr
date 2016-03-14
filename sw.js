@@ -1,8 +1,8 @@
-//import idb from 'idb';
+import idb from 'idb';
 
 var staticCacheName = 'mbta-static-v4';
 
-/*var dbPromise = idb.open('mbta-db', 1, function(upgradeDb) {
+var dbPromise = idb.open('mbta-db', 1, function(upgradeDb) {
   switch(upgradeDb.oldVersion) {
     case 0:
       var tripStore = upgradeDb.createObjectStore('trips', {keyPath: 'tripName'});
@@ -38,7 +38,7 @@ self._processGTFSData = function(gtfsData) {
     console.log(error);
   });
 }
-*/
+
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(staticCacheName).then(function(cache) {
@@ -58,7 +58,7 @@ self.addEventListener('install', function(event) {
       return response.text();
     }).then(function(text) {
       console.log(text);
-//      return  self._processGTFSData(text);
+      return  self._processGTFSData(text);
     }).catch(function(error) {
       console.log(error);
     })
