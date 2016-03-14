@@ -26,7 +26,7 @@ self._processGTFSData = function(gtfsData) {
       var stop = entries[3];
 
       //add the entry to indexDB trips db
-      tripStore.put({tripName: tripname, arrival: arr, departure: dep, stop: stopName});
+      tripStore.put({tripName: tripname, arrival: arr, departure: dep, stop: stop});
 
       //TODO: add the entry to indexDB stops
 
