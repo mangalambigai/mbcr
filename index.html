@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrapcerulean.css">
+    <title>MBTA Commuter Rail</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>MBTA Commuter Rail Schedule - Providence/Stoughton Line</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-inline" name="trainForm">
+                    <div class="form-group">
+                        <label for="departure">Where will you start from? *</label>
+                        <input id="departure" name="departure" list="stations" type="text" class="form-control" placeholder="Departure Station" autofocus required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="arrival">Where do you want to go? *</label>
+                        <input id="arrival" name="arrival" list="stations" type="text" class="form-control" placeholder="Destination Station" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="maxtime">How many hours of schedule do you want to see?</label>
+                        <input id="maxtime" type="number" min="1" max="10" step="1" value="2"></input>
+                    </div>
+
+                    <datalist id="stations">
+                        <option value="South Station" />
+                        <option value="Back Bay" />
+                        <option value="Ruggles" />
+                        <option value="Hyde Park" />
+                        <option value="Route 128" />
+                        <option value="Canton Junction" />
+                        <option value="Canton Center" />
+                        <option value="Stoughton" />
+                        <option value="Sharon" />
+                        <option value="Mansfield" />
+                        <option value="Attleboro" />
+                        <option value="South Attleboro" />
+                        <option value="Providence" />
+                    </datalist>
+
+                    <button type="button" class="btn btn-primary" onclick="getSchedule()">Get Schedule</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="hidden alert alert-success" id="resultCount"></div>
+            </div>
+        </div>
+        <div class="row" id="results">
+        </div>
+    </div>
+    <script src="js/all.js"></script>
+
+</body>
+
+</html>

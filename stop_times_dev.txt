@@ -1,0 +1,933 @@
+CR-Providence-CR-Saturday-Providence-Dec13-1801,06:45:00,06:45:00,South Station,1,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1801,06:50:00,06:50:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1801,06:53:00,06:53:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1801,07:01:00,07:01:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1801,07:06:00,07:06:00,Route 128,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1801,07:11:00,07:11:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1801,07:16:00,07:16:00,Sharon,9,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1801,07:24:00,07:24:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1801,07:31:00,07:31:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1801,07:40:00,07:40:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1801,07:50:00,07:50:00,Providence,13,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1802,06:35:00,06:35:00,Providence,3,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1802,06:45:00,06:45:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1802,06:53:00,06:53:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1802,07:00:00,07:00:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1802,07:08:00,07:08:00,Sharon,7,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1802,07:15:00,07:15:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1802,07:20:00,07:20:00,Route 128,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1802,07:25:00,07:25:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1802,07:35:00,07:35:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1802,07:38:00,07:38:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1802,07:43:00,07:43:00,South Station,15,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1803,10:05:00,10:05:00,South Station,1,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1803,10:10:00,10:10:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1803,10:13:00,10:13:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1803,10:21:00,10:21:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1803,10:26:00,10:26:00,Route 128,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1803,10:31:00,10:31:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1803,10:36:00,10:36:00,Sharon,9,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1803,10:44:00,10:44:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1803,10:51:00,10:51:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1803,11:00:00,11:00:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1803,11:10:00,11:10:00,Providence,13,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1804,08:35:00,08:35:00,Providence,3,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1804,08:45:00,08:45:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1804,08:53:00,08:53:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1804,09:00:00,09:00:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1804,09:08:00,09:08:00,Sharon,7,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1804,09:15:00,09:15:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1804,09:20:00,09:20:00,Route 128,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1804,09:25:00,09:25:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1804,09:35:00,09:35:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1804,09:38:00,09:38:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1804,09:43:00,09:43:00,South Station,15,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1805,11:05:00,11:05:00,South Station,1,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1805,11:10:00,11:10:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1805,11:13:00,11:13:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1805,11:21:00,11:21:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1805,11:31:00,11:31:00,Route 128,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1805,11:36:00,11:36:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1805,11:41:00,11:41:00,Sharon,9,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1805,11:49:00,11:49:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1805,11:56:00,11:56:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1805,12:05:00,12:05:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1805,12:15:00,12:15:00,Providence,13,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1806,11:20:00,11:20:00,Providence,3,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1806,11:30:00,11:30:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1806,11:38:00,11:38:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1806,11:45:00,11:45:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1806,11:53:00,11:53:00,Sharon,7,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1806,12:00:00,12:00:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1806,12:05:00,12:05:00,Route 128,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1806,12:10:00,12:10:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1806,12:22:00,12:22:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1806,12:25:00,12:25:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1806,12:30:00,12:30:00,South Station,15,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1807,13:05:00,13:05:00,South Station,1,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1807,13:10:00,13:10:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1807,13:13:00,13:13:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1807,13:21:00,13:21:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1807,13:31:00,13:31:00,Route 128,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1807,13:36:00,13:36:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1807,13:41:00,13:41:00,Sharon,9,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1807,13:49:00,13:49:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1807,13:56:00,13:56:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1807,14:05:00,14:05:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1807,14:15:00,14:15:00,Providence,13,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1808,12:55:00,12:55:00,Providence,3,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1808,13:05:00,13:05:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1808,13:13:00,13:13:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1808,13:20:00,13:20:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1808,13:28:00,13:28:00,Sharon,7,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1808,13:35:00,13:35:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1808,13:40:00,13:40:00,Route 128,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1808,13:45:00,13:45:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1808,13:55:00,13:55:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1808,13:58:00,13:58:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1808,14:03:00,14:03:00,South Station,15,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1809,14:25:00,14:25:00,South Station,1,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1809,14:30:00,14:30:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1809,14:33:00,14:33:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1809,14:41:00,14:41:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1809,14:46:00,14:46:00,Route 128,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1809,14:51:00,14:51:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1809,14:56:00,14:56:00,Sharon,9,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1809,15:04:00,15:04:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1809,15:11:00,15:11:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1809,15:20:00,15:20:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1809,15:30:00,15:30:00,Providence,13,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1810,14:56:00,14:56:00,Providence,3,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1810,15:06:00,15:06:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1810,15:14:00,15:14:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1810,15:24:00,15:24:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1810,15:32:00,15:32:00,Sharon,7,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1810,15:39:00,15:39:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1810,15:44:00,15:44:00,Route 128,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1810,15:49:00,15:49:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1810,15:59:00,15:59:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1810,16:02:00,16:02:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1810,16:07:00,16:07:00,South Station,15,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1811,16:35:00,16:35:00,South Station,1,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1811,16:40:00,16:40:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1811,16:43:00,16:43:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1811,16:51:00,16:51:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1811,16:56:00,16:56:00,Route 128,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1811,17:01:00,17:01:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1811,17:06:00,17:06:00,Sharon,9,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1811,17:14:00,17:14:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1811,17:21:00,17:21:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1811,17:30:00,17:30:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1811,17:40:00,17:40:00,Providence,13,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1812,16:56:00,16:56:00,Providence,3,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1812,17:06:00,17:06:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1812,17:14:00,17:14:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1812,17:24:00,17:24:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1812,17:32:00,17:32:00,Sharon,7,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1812,17:39:00,17:39:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1812,17:44:00,17:44:00,Route 128,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1812,17:49:00,17:49:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1812,17:59:00,17:59:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1812,18:02:00,18:02:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1812,18:07:00,18:07:00,South Station,15,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1813,18:45:00,18:45:00,South Station,1,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1813,18:50:00,18:50:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1813,18:53:00,18:53:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1813,19:01:00,19:01:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1813,19:06:00,19:06:00,Route 128,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1813,19:11:00,19:11:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1813,19:16:00,19:16:00,Sharon,9,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1813,19:24:00,19:24:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1813,19:31:00,19:31:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1813,19:40:00,19:40:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1813,19:50:00,19:50:00,Providence,13,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1814,19:05:00,19:05:00,Providence,3,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1814,19:15:00,19:15:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1814,19:23:00,19:23:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1814,19:30:00,19:30:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1814,19:38:00,19:38:00,Sharon,7,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1814,19:45:00,19:45:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1814,19:50:00,19:50:00,Route 128,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1814,19:55:00,19:55:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1814,20:05:00,20:05:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1814,20:08:00,20:08:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1814,20:13:00,20:13:00,South Station,15,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1815,20:45:00,20:45:00,South Station,1,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1815,20:50:00,20:50:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1815,20:53:00,20:53:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1815,21:01:00,21:01:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1815,21:06:00,21:06:00,Route 128,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1815,21:11:00,21:11:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1815,21:16:00,21:16:00,Sharon,9,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1815,21:24:00,21:24:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1815,21:31:00,21:31:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1815,21:40:00,21:40:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1815,21:50:00,21:50:00,Providence,13,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1816,20:52:00,20:52:00,Providence,3,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1816,21:02:00,21:02:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1816,21:10:00,21:10:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1816,21:20:00,21:20:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1816,21:28:00,21:28:00,Sharon,7,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1816,21:35:00,21:35:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1816,21:40:00,21:40:00,Route 128,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1816,21:45:00,21:45:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1816,21:55:00,21:55:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1816,21:58:00,21:58:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1816,22:03:00,22:03:00,South Station,15,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1817,23:10:00,23:10:00,South Station,1,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1817,23:15:00,23:15:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1817,23:18:00,23:18:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1817,23:26:00,23:26:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1817,23:31:00,23:31:00,Route 128,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1817,23:36:00,23:36:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1817,23:41:00,23:41:00,Sharon,9,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1817,23:49:00,23:49:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1817,23:56:00,23:56:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1817,24:05:00,24:05:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1817,24:15:00,24:15:00,Providence,13,,1,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1818,22:00:00,22:00:00,Providence,3,,0,1,1
+CR-Providence-CR-Saturday-Providence-Dec13-1818,22:10:00,22:10:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1818,22:18:00,22:18:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1818,22:25:00,22:25:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1818,22:33:00,22:33:00,Sharon,7,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1818,22:40:00,22:40:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1818,22:45:00,22:45:00,Route 128,11,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1818,22:50:00,22:50:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1818,23:00:00,23:00:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1818,23:03:00,23:03:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Saturday-Providence-Dec13-1818,23:08:00,23:08:00,South Station,15,,1,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2805,11:05:00,11:05:00,South Station,1,,0,1,1
+CR-Providence-CR-Sunday-Providence-Dec13-2805,11:10:00,11:10:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2805,11:13:00,11:13:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2805,11:21:00,11:21:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2805,11:31:00,11:31:00,Route 128,5,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2805,11:36:00,11:36:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2805,11:41:00,11:41:00,Sharon,9,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2805,11:49:00,11:49:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2805,11:56:00,11:56:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2805,12:05:00,12:05:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2805,12:15:00,12:15:00,Providence,13,,1,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2806,11:20:00,11:20:00,Providence,3,,0,1,1
+CR-Providence-CR-Sunday-Providence-Dec13-2806,11:30:00,11:30:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2806,11:38:00,11:38:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2806,11:45:00,11:45:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2806,11:53:00,11:53:00,Sharon,7,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2806,12:00:00,12:00:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2806,12:05:00,12:05:00,Route 128,11,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2806,12:10:00,12:10:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2806,12:22:00,12:22:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2806,12:25:00,12:25:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2806,12:30:00,12:30:00,South Station,15,,1,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2807,13:05:00,13:05:00,South Station,1,,0,1,1
+CR-Providence-CR-Sunday-Providence-Dec13-2807,13:10:00,13:10:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2807,13:13:00,13:13:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2807,13:21:00,13:21:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2807,13:31:00,13:31:00,Route 128,5,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2807,13:36:00,13:36:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2807,13:41:00,13:41:00,Sharon,9,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2807,13:49:00,13:49:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2807,13:56:00,13:56:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2807,14:05:00,14:05:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2807,14:15:00,14:15:00,Providence,13,,1,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2808,12:55:00,12:55:00,Providence,3,,0,1,1
+CR-Providence-CR-Sunday-Providence-Dec13-2808,13:05:00,13:05:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2808,13:13:00,13:13:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2808,13:20:00,13:20:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2808,13:28:00,13:28:00,Sharon,7,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2808,13:35:00,13:35:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2808,13:40:00,13:40:00,Route 128,11,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2808,13:45:00,13:45:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2808,13:55:00,13:55:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2808,13:58:00,13:58:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2808,14:03:00,14:03:00,South Station,15,,1,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2809,14:25:00,14:25:00,South Station,1,,0,1,1
+CR-Providence-CR-Sunday-Providence-Dec13-2809,14:30:00,14:30:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2809,14:33:00,14:33:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2809,14:41:00,14:41:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2809,14:46:00,14:46:00,Route 128,5,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2809,14:51:00,14:51:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2809,14:56:00,14:56:00,Sharon,9,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2809,15:04:00,15:04:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2809,15:11:00,15:11:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2809,15:20:00,15:20:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2809,15:30:00,15:30:00,Providence,13,,1,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2810,14:56:00,14:56:00,Providence,3,,0,1,1
+CR-Providence-CR-Sunday-Providence-Dec13-2810,15:06:00,15:06:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2810,15:14:00,15:14:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2810,15:24:00,15:24:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2810,15:32:00,15:32:00,Sharon,7,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2810,15:39:00,15:39:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2810,15:44:00,15:44:00,Route 128,11,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2810,15:49:00,15:49:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2810,15:59:00,15:59:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2810,16:02:00,16:02:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2810,16:07:00,16:07:00,South Station,15,,1,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2811,16:35:00,16:35:00,South Station,1,,0,1,1
+CR-Providence-CR-Sunday-Providence-Dec13-2811,16:40:00,16:40:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2811,16:43:00,16:43:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2811,16:51:00,16:51:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2811,16:56:00,16:56:00,Route 128,5,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2811,17:01:00,17:01:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2811,17:06:00,17:06:00,Sharon,9,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2811,17:14:00,17:14:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2811,17:21:00,17:21:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2811,17:30:00,17:30:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2811,17:40:00,17:40:00,Providence,13,,1,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2812,16:56:00,16:56:00,Providence,3,,0,1,1
+CR-Providence-CR-Sunday-Providence-Dec13-2812,17:06:00,17:06:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2812,17:14:00,17:14:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2812,17:24:00,17:24:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2812,17:32:00,17:32:00,Sharon,7,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2812,17:39:00,17:39:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2812,17:44:00,17:44:00,Route 128,11,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2812,17:49:00,17:49:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2812,17:59:00,17:59:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2812,18:02:00,18:02:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2812,18:07:00,18:07:00,South Station,15,,1,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2813,18:45:00,18:45:00,South Station,1,,0,1,1
+CR-Providence-CR-Sunday-Providence-Dec13-2813,18:50:00,18:50:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2813,18:53:00,18:53:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2813,19:01:00,19:01:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2813,19:06:00,19:06:00,Route 128,5,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2813,19:11:00,19:11:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2813,19:16:00,19:16:00,Sharon,9,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2813,19:24:00,19:24:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2813,19:31:00,19:31:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2813,19:40:00,19:40:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2813,19:50:00,19:50:00,Providence,13,,1,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2814,19:05:00,19:05:00,Providence,3,,0,1,1
+CR-Providence-CR-Sunday-Providence-Dec13-2814,19:15:00,19:15:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2814,19:23:00,19:23:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2814,19:30:00,19:30:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2814,19:38:00,19:38:00,Sharon,7,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2814,19:45:00,19:45:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2814,19:50:00,19:50:00,Route 128,11,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2814,19:55:00,19:55:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2814,20:05:00,20:05:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2814,20:08:00,20:08:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2814,20:13:00,20:13:00,South Station,15,,1,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2815,20:45:00,20:45:00,South Station,1,,0,1,1
+CR-Providence-CR-Sunday-Providence-Dec13-2815,20:50:00,20:50:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2815,20:53:00,20:53:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2815,21:01:00,21:01:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2815,21:06:00,21:06:00,Route 128,5,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2815,21:11:00,21:11:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2815,21:16:00,21:16:00,Sharon,9,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2815,21:24:00,21:24:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2815,21:31:00,21:31:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2815,21:40:00,21:40:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2815,21:50:00,21:50:00,Providence,13,,1,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2816,20:52:00,20:52:00,Providence,3,,0,1,1
+CR-Providence-CR-Sunday-Providence-Dec13-2816,21:02:00,21:02:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2816,21:10:00,21:10:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2816,21:20:00,21:20:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2816,21:28:00,21:28:00,Sharon,7,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2816,21:35:00,21:35:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2816,21:40:00,21:40:00,Route 128,11,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2816,21:45:00,21:45:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2816,21:55:00,21:55:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2816,21:58:00,21:58:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2816,22:03:00,22:03:00,South Station,15,,1,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2817,23:10:00,23:10:00,South Station,1,,0,1,1
+CR-Providence-CR-Sunday-Providence-Dec13-2817,23:15:00,23:15:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2817,23:18:00,23:18:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2817,23:26:00,23:26:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2817,23:31:00,23:31:00,Route 128,5,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2817,23:36:00,23:36:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2817,23:41:00,23:41:00,Sharon,9,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2817,23:49:00,23:49:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2817,23:56:00,23:56:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2817,24:05:00,24:05:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2817,24:15:00,24:15:00,Providence,13,,1,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2818,22:00:00,22:00:00,Providence,3,,0,1,1
+CR-Providence-CR-Sunday-Providence-Dec13-2818,22:10:00,22:10:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2818,22:18:00,22:18:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2818,22:25:00,22:25:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2818,22:33:00,22:33:00,Sharon,7,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2818,22:40:00,22:40:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2818,22:45:00,22:45:00,Route 128,11,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2818,22:50:00,22:50:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2818,23:00:00,23:00:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2818,23:03:00,23:03:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Sunday-Providence-Dec13-2818,23:08:00,23:08:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-800,05:07:00,05:07:00,Providence,3,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-800,05:17:00,05:17:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-800,05:27:00,05:27:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-800,05:36:00,05:36:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-800,05:44:00,05:44:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-800,05:51:00,05:51:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-800,05:56:00,05:56:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-800,06:01:00,06:01:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-800,06:11:00,06:11:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-800,06:15:00,06:15:00,Back Bay,14,,0,0,0
+CR-Providence-CR-Weekday-Providence-Dec13-800,06:20:00,06:20:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-801,06:20:00,06:20:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-801,06:25:00,06:25:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-801,06:28:00,06:28:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-801,06:40:00,06:40:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-801,06:49:00,06:49:00,Sharon,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-801,06:56:00,06:56:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-801,07:05:00,07:05:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-801,07:11:00,07:11:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-801,07:20:00,07:20:00,Providence,13,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-802,04:50:00,04:50:00,Wickford Junction,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-802,05:05:00,05:05:00,TF Green Airport,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-802,05:25:00,05:25:00,Providence,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-802,05:35:00,05:35:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-802,05:45:00,05:45:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-802,05:55:00,05:55:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-802,06:04:00,06:04:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-802,06:11:00,06:11:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-802,06:16:00,06:16:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-802,06:21:00,06:21:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-802,06:31:00,06:31:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-802,06:35:00,06:35:00,Back Bay,14,,0,0,0
+CR-Providence-CR-Weekday-Providence-Dec13-802,06:40:00,06:40:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-803,07:20:00,07:20:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-803,07:25:00,07:25:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-803,07:28:00,07:28:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-803,07:40:00,07:40:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-803,07:46:00,07:46:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-803,07:52:00,07:52:00,Sharon,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-803,07:59:00,07:59:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-803,08:07:00,08:07:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-803,08:13:00,08:13:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-803,08:22:00,08:22:00,Providence,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-803,08:38:00,08:38:00,TF Green Airport,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-803,08:54:00,08:54:00,Wickford Junction,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-804,06:07:00,06:07:00,Providence,3,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-804,06:16:00,06:16:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-804,06:28:00,06:28:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-804,06:38:00,06:38:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-804,06:48:00,06:48:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-804,06:58:00,06:58:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-804,07:10:00,07:10:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-804,07:14:00,07:14:00,Back Bay,14,,0,0,0
+CR-Providence-CR-Weekday-Providence-Dec13-804,07:19:00,07:19:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-805,09:55:00,09:55:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-805,10:00:00,10:00:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-805,10:11:00,10:11:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-805,10:16:00,10:16:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-805,10:22:00,10:22:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-805,10:28:00,10:28:00,Sharon,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-805,10:35:00,10:35:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-805,10:43:00,10:43:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-805,10:50:00,10:50:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-805,11:00:00,11:00:00,Providence,13,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-806,05:58:00,05:58:00,Wickford Junction,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-806,06:13:00,06:13:00,TF Green Airport,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-806,06:33:00,06:33:00,Providence,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-806,06:42:00,06:42:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-806,06:52:00,06:52:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-806,07:04:00,07:04:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-806,07:13:00,07:13:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-806,07:24:00,07:24:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-806,07:40:00,07:40:00,Back Bay,14,,0,0,0
+CR-Providence-CR-Weekday-Providence-Dec13-806,07:45:00,07:45:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-807,11:20:00,11:20:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-807,11:25:00,11:25:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-807,11:28:00,11:28:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-807,11:38:00,11:38:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-807,11:43:00,11:43:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-807,11:49:00,11:49:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-807,11:55:00,11:55:00,Sharon,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-807,12:02:00,12:02:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-807,12:10:00,12:10:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-807,12:16:00,12:16:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-807,12:27:00,12:27:00,Providence,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-807,12:43:00,12:43:00,TF Green Airport,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-807,12:59:00,12:59:00,Wickford Junction,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-808,06:37:00,06:37:00,Wickford Junction,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-808,06:52:00,06:52:00,TF Green Airport,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-808,07:12:00,07:12:00,Providence,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-808,07:22:00,07:22:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-808,07:32:00,07:32:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-808,07:44:00,07:44:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-808,08:11:00,08:11:00,Back Bay,14,,0,0,0
+CR-Providence-CR-Weekday-Providence-Dec13-808,08:16:00,08:16:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-809,13:45:00,13:45:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-809,13:50:00,13:50:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-809,13:53:00,13:53:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-809,14:02:00,14:02:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-809,14:08:00,14:08:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-809,14:13:00,14:13:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-809,14:19:00,14:19:00,Sharon,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-809,14:27:00,14:27:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-809,14:35:00,14:35:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-809,14:45:00,14:45:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-809,14:54:00,14:54:00,Providence,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-809,15:10:00,15:10:00,TF Green Airport,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-809,15:26:00,15:26:00,Wickford Junction,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-810,07:35:00,07:35:00,Providence,3,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-810,07:45:00,07:45:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-810,07:55:00,07:55:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-810,08:05:00,08:05:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-810,08:14:00,08:14:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-810,08:24:00,08:24:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-810,08:30:00,08:30:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-810,08:36:00,08:36:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-810,08:46:00,08:46:00,Back Bay,14,,0,0,0
+CR-Providence-CR-Weekday-Providence-Dec13-810,08:51:00,08:51:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-811,15:30:00,15:30:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-811,15:35:00,15:35:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-811,15:38:00,15:38:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-811,15:46:00,15:46:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-811,15:52:00,15:52:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-811,15:58:00,15:58:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-811,16:06:00,16:06:00,Sharon,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-811,16:15:00,16:15:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-811,16:25:00,16:25:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-811,16:35:00,16:35:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-811,16:45:00,16:45:00,Providence,13,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-812,07:42:00,07:42:00,Wickford Junction,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-812,07:59:00,07:59:00,TF Green Airport,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-812,08:15:00,08:15:00,Providence,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-812,08:24:00,08:24:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-812,08:34:00,08:34:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-812,08:44:00,08:44:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-812,08:55:00,08:55:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-812,09:03:00,09:03:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-812,09:08:00,09:08:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-812,09:13:00,09:13:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-812,09:23:00,09:23:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-812,09:27:00,09:27:00,Back Bay,14,,0,0,0
+CR-Providence-CR-Weekday-Providence-Dec13-812,09:32:00,09:32:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-813,16:08:00,16:08:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-813,16:13:00,16:13:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-813,16:16:00,16:16:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-813,16:25:00,16:25:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-813,16:44:00,16:44:00,Sharon,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-813,16:53:00,16:53:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-813,17:03:00,17:03:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-813,17:13:00,17:13:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-813,17:23:00,17:23:00,Providence,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-813,17:38:00,17:38:00,TF Green Airport,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-813,17:54:00,17:54:00,Wickford Junction,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-814,09:10:00,09:10:00,Wickford Junction,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-814,09:26:00,09:26:00,TF Green Airport,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-814,09:45:00,09:45:00,Providence,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-814,09:54:00,09:54:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-814,10:04:00,10:04:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-814,10:12:00,10:12:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-814,10:21:00,10:21:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-814,10:28:00,10:28:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-814,10:33:00,10:33:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-814,10:38:00,10:38:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-814,10:48:00,10:48:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-814,10:52:00,10:52:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-814,10:57:00,10:57:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-815,16:35:00,16:35:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-815,16:40:00,16:40:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-815,16:43:00,16:43:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-815,16:54:00,16:54:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-815,17:05:00,17:05:00,Sharon,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-815,17:14:00,17:14:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-815,17:24:00,17:24:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-815,17:33:00,17:33:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-815,17:42:00,17:42:00,Providence,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-816,11:15:00,11:15:00,Providence,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-816,11:25:00,11:25:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-816,11:34:00,11:34:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-816,11:42:00,11:42:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-816,11:51:00,11:51:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-816,11:58:00,11:58:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-816,12:03:00,12:03:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-816,12:08:00,12:08:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-816,12:15:00,12:15:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-816,12:20:00,12:20:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-816,12:25:00,12:25:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-817,17:00:00,17:00:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-817,17:05:00,17:05:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-817,17:09:00,17:09:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-817,17:27:00,17:27:00,Sharon,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-817,17:36:00,17:36:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-817,17:50:00,17:50:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-817,17:59:00,17:59:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-817,18:10:00,18:10:00,Providence,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-817,18:26:00,18:26:00,TF Green Airport,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-817,18:42:00,18:42:00,Wickford Junction,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-818,13:10:00,13:10:00,Wickford Junction,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-818,13:25:00,13:25:00,TF Green Airport,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-818,13:41:00,13:41:00,Providence,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-818,13:52:00,13:52:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-818,14:02:00,14:02:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-818,14:12:00,14:12:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-818,14:21:00,14:21:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-818,14:30:00,14:30:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-818,14:42:00,14:42:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-818,14:45:00,14:45:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-818,14:50:00,14:50:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-819,17:40:00,17:40:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-819,17:45:00,17:45:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-819,17:49:00,17:49:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-819,18:07:00,18:07:00,Sharon,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-819,18:19:00,18:19:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-819,18:27:00,18:27:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-819,18:35:00,18:35:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-819,18:46:00,18:46:00,Providence,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-819,19:02:00,19:02:00,TF Green Airport,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-819,19:18:00,19:18:00,Wickford Junction,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-820,15:40:00,15:40:00,Wickford Junction,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-820,15:54:00,15:54:00,TF Green Airport,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-820,16:10:00,16:10:00,Providence,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-820,16:20:00,16:20:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-820,16:30:00,16:30:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-820,16:38:00,16:38:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-820,16:47:00,16:47:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-820,16:58:00,16:58:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-820,17:15:00,17:15:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-820,17:20:00,17:20:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-821,18:10:00,18:10:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-821,18:15:00,18:15:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-821,18:19:00,18:19:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-821,18:29:00,18:29:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-821,18:37:00,18:37:00,Sharon,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-821,18:47:00,18:47:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-821,18:56:00,18:56:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-821,19:04:00,19:04:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-821,19:13:00,19:13:00,Providence,13,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-822,17:12:00,17:12:00,Providence,3,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-822,17:22:00,17:22:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-822,17:31:00,17:31:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-822,17:40:00,17:40:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-822,17:48:00,17:48:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-822,17:55:00,17:55:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-822,18:00:00,18:00:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-822,18:06:00,18:06:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-822,18:17:00,18:17:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-822,18:22:00,18:22:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-823,18:50:00,18:50:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-823,18:55:00,18:55:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-823,18:58:00,18:58:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-823,19:08:00,19:08:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-823,19:13:00,19:13:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-823,19:18:00,19:18:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-823,19:24:00,19:24:00,Sharon,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-823,19:33:00,19:33:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-823,19:42:00,19:42:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-823,19:49:00,19:49:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-823,19:59:00,19:59:00,Providence,13,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-824,18:00:00,18:00:00,Providence,3,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-824,18:10:00,18:10:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-824,18:18:00,18:18:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-824,18:26:00,18:26:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-824,18:34:00,18:34:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-824,18:47:00,18:47:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-824,18:58:00,18:58:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-824,19:03:00,19:03:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-825,20:15:00,20:15:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-825,20:20:00,20:20:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-825,20:23:00,20:23:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-825,20:33:00,20:33:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-825,20:38:00,20:38:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-825,20:43:00,20:43:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-825,20:49:00,20:49:00,Sharon,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-825,20:57:00,20:57:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-825,21:05:00,21:05:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-825,21:12:00,21:12:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-825,21:23:00,21:23:00,Providence,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-825,21:39:00,21:39:00,TF Green Airport,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-825,21:55:00,21:55:00,Wickford Junction,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-826,19:30:00,19:30:00,Providence,3,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-826,19:40:00,19:40:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-826,19:49:00,19:49:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-826,19:57:00,19:57:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-826,20:05:00,20:05:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-826,20:18:00,20:18:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-826,20:29:00,20:29:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-826,20:34:00,20:34:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-827,21:05:00,21:05:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-827,21:10:00,21:10:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-827,21:13:00,21:13:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-827,21:23:00,21:23:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-827,21:28:00,21:28:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-827,21:33:00,21:33:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-827,21:39:00,21:39:00,Sharon,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-827,21:47:00,21:47:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-827,21:55:00,21:55:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-827,22:02:00,22:02:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-827,22:11:00,22:11:00,Providence,13,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-828,20:22:00,20:22:00,Providence,3,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-828,20:32:00,20:32:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-828,20:41:00,20:41:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-828,20:49:00,20:49:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-828,20:57:00,20:57:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-828,21:10:00,21:10:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-828,21:20:00,21:20:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-828,21:25:00,21:25:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-829,22:25:00,22:25:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-829,22:30:00,22:30:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-829,22:33:00,22:33:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-829,22:43:00,22:43:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-829,22:48:00,22:48:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-829,22:53:00,22:53:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-829,22:59:00,22:59:00,Sharon,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-829,23:07:00,23:07:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-829,23:15:00,23:15:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-829,23:22:00,23:22:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-829,23:32:00,23:32:00,Providence,13,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-830,22:10:00,22:10:00,Wickford Junction,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-830,22:24:00,22:24:00,TF Green Airport,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-830,22:40:00,22:40:00,Providence,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-830,22:50:00,22:50:00,South Attleboro,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-830,22:59:00,22:59:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-830,23:08:00,23:08:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-830,23:18:00,23:18:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-830,23:26:00,23:26:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-830,23:31:00,23:31:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-830,23:36:00,23:36:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-830,23:45:00,23:45:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-830,23:50:00,23:50:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-831,23:59:00,23:59:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-831,24:04:00,24:04:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-831,24:07:00,24:07:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-831,24:16:00,24:16:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-831,24:21:00,24:21:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-831,24:26:00,24:26:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-831,24:31:00,24:31:00,Sharon,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-831,24:39:00,24:39:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-831,24:48:00,24:48:00,Attleboro,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-831,24:56:00,24:56:00,South Attleboro,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-831,25:06:00,25:06:00,Providence,13,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-841,06:35:00,06:35:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-841,06:40:00,06:40:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-841,07:08:00,07:08:00,Mansfield,10,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-842,07:26:00,07:26:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-842,07:35:00,07:35:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-842,07:41:00,07:41:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-842,07:47:00,07:47:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-842,07:52:00,07:52:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-842,08:02:00,08:02:00,Back Bay,14,,0,0,0
+CR-Providence-CR-Weekday-Providence-Dec13-842,08:07:00,08:07:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-843,07:50:00,07:50:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-843,07:55:00,07:55:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-843,07:58:00,07:58:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-843,08:10:00,08:10:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-843,08:15:00,08:15:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-843,08:28:00,08:28:00,Mansfield,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-843,08:37:00,08:37:00,Attleboro,11,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-844,09:00:00,09:00:00,Attleboro,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-844,09:09:00,09:09:00,Mansfield,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-844,09:17:00,09:17:00,Sharon,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-844,09:24:00,09:24:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-844,09:26:00,09:26:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-844,09:41:00,09:41:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-844,09:44:00,09:44:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-844,09:49:00,09:49:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-8801,05:11:00,05:11:00,Providence,13,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-8801,05:27:00,05:27:00,TF Green Airport,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-8801,05:43:00,05:43:00,Wickford Junction,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-8802,18:55:00,18:55:00,Wickford Junction,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-8802,19:09:00,19:09:00,TF Green Airport,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-8802,19:25:00,19:25:00,Providence,3,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-8803,05:45:00,05:45:00,Providence,13,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-8803,06:01:00,06:01:00,TF Green Airport,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-8803,06:17:00,06:17:00,Wickford Junction,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-8804,19:45:00,19:45:00,Wickford Junction,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-8804,19:59:00,19:59:00,TF Green Airport,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-8804,20:15:00,20:15:00,Providence,3,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-8805,07:00:00,07:00:00,Providence,13,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-8805,07:16:00,07:16:00,TF Green Airport,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-8805,07:32:00,07:32:00,Wickford Junction,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-901,05:15:00,05:15:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-901,05:38:00,05:38:00,Canton Center,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-901,05:46:00,05:46:00,Stoughton,8,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-902,06:28:00,06:28:00,Stoughton,8,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-902,06:36:00,06:36:00,Canton Center,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-902,06:39:00,06:39:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-902,06:44:00,06:44:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-902,06:49:00,06:49:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-902,06:59:00,06:59:00,Back Bay,14,,0,0,0
+CR-Providence-CR-Weekday-Providence-Dec13-902,07:04:00,07:04:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-903,05:35:00,05:35:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-903,05:40:00,05:40:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-903,05:51:00,05:51:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-903,05:59:00,05:59:00,Canton Center,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-903,06:10:00,06:10:00,Stoughton,8,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-904,06:56:00,06:56:00,Stoughton,8,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-904,07:04:00,07:04:00,Canton Center,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-904,07:08:00,07:08:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-904,07:14:00,07:14:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-904,07:19:00,07:19:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-904,07:28:00,07:28:00,Back Bay,14,,0,0,0
+CR-Providence-CR-Weekday-Providence-Dec13-904,07:33:00,07:33:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-905,07:02:00,07:02:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-905,07:07:00,07:07:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-905,07:23:00,07:23:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-905,07:26:00,07:26:00,Canton Center,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-905,07:34:00,07:34:00,Stoughton,8,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-906,07:48:00,07:48:00,Stoughton,8,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-906,07:57:00,07:57:00,Canton Center,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-906,08:01:00,08:01:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-906,08:07:00,08:07:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-906,08:13:00,08:13:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-906,08:23:00,08:23:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-906,08:27:00,08:27:00,Back Bay,14,,0,0,0
+CR-Providence-CR-Weekday-Providence-Dec13-906,08:32:00,08:32:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-907,07:40:00,07:40:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-907,07:45:00,07:45:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-907,07:57:00,07:57:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-907,08:02:00,08:02:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-907,08:07:00,08:07:00,Canton Center,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-907,08:15:00,08:15:00,Stoughton,8,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-908,08:28:00,08:28:00,Stoughton,8,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-908,08:36:00,08:36:00,Canton Center,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-908,08:40:00,08:40:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-908,08:45:00,08:45:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-908,08:49:00,08:49:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-908,08:58:00,08:58:00,Back Bay,14,,0,0,0
+CR-Providence-CR-Weekday-Providence-Dec13-908,09:03:00,09:03:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-909,08:50:00,08:50:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-909,08:55:00,08:55:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-909,09:07:00,09:07:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-909,09:13:00,09:13:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-909,09:16:00,09:16:00,Canton Center,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-909,09:24:00,09:24:00,Stoughton,8,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-910,09:40:00,09:40:00,Stoughton,8,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-910,09:49:00,09:49:00,Canton Center,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-910,09:52:00,09:52:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-910,09:57:00,09:57:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-910,10:02:00,10:02:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-910,10:12:00,10:12:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-910,10:17:00,10:17:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-911,09:45:00,09:45:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-911,09:50:00,09:50:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-911,10:07:00,10:07:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-911,10:10:00,10:10:00,Canton Center,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-911,10:18:00,10:18:00,Stoughton,8,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-912,10:40:00,10:40:00,Stoughton,8,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-912,10:49:00,10:49:00,Canton Center,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-912,10:52:00,10:52:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-912,10:57:00,10:57:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-912,11:02:00,11:02:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-912,11:12:00,11:12:00,Ruggles,13,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-912,11:15:00,11:15:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-912,11:20:00,11:20:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-913,13:20:00,13:20:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-913,13:25:00,13:25:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-913,13:41:00,13:41:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-913,13:47:00,13:47:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-913,13:53:00,13:53:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-913,13:56:00,13:56:00,Canton Center,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-913,14:04:00,14:04:00,Stoughton,8,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-914,14:20:00,14:20:00,Stoughton,8,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-914,14:27:00,14:27:00,Canton Center,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-914,14:30:00,14:30:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-914,14:39:00,14:39:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-914,14:49:00,14:49:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-914,14:54:00,14:54:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-915,14:25:00,14:25:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-915,14:30:00,14:30:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-915,14:33:00,14:33:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-915,14:43:00,14:43:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-915,14:49:00,14:49:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-915,14:55:00,14:55:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-915,14:58:00,14:58:00,Canton Center,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-915,15:06:00,15:06:00,Stoughton,8,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-916,15:23:00,15:23:00,Stoughton,8,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-916,15:33:00,15:33:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-916,15:38:00,15:38:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-916,15:43:00,15:43:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-916,15:53:00,15:53:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-916,15:58:00,15:58:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-917,16:00:00,16:00:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-917,16:05:00,16:05:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-917,16:08:00,16:08:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-917,16:19:00,16:19:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-917,16:26:00,16:26:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-917,16:29:00,16:29:00,Canton Center,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-917,16:38:00,16:38:00,Stoughton,8,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-918,17:00:00,17:00:00,Stoughton,8,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-918,17:08:00,17:08:00,Canton Center,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-918,17:10:00,17:10:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-918,17:16:00,17:16:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-918,17:27:00,17:27:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-918,17:32:00,17:32:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-919,16:50:00,16:50:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-919,16:55:00,16:55:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-919,16:59:00,16:59:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-919,17:10:00,17:10:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-919,17:17:00,17:17:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-919,17:20:00,17:20:00,Canton Center,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-919,17:30:00,17:30:00,Stoughton,8,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-920,17:45:00,17:45:00,Stoughton,8,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-920,18:08:00,18:08:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-920,18:13:00,18:13:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-921,17:15:00,17:15:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-921,17:20:00,17:20:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-921,17:24:00,17:24:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-921,17:34:00,17:34:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-921,17:40:00,17:40:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-921,17:48:00,17:48:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-921,17:52:00,17:52:00,Canton Center,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-921,18:01:00,18:01:00,Stoughton,8,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-922,18:42:00,18:42:00,Stoughton,8,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-922,18:49:00,18:49:00,Canton Center,9,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-922,18:52:00,18:52:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-922,18:57:00,18:57:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-922,19:02:00,19:02:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-922,19:12:00,19:12:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-922,19:17:00,19:17:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-923,17:45:00,17:45:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-923,17:51:00,17:51:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-923,17:56:00,17:56:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-923,18:08:00,18:08:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-923,18:14:00,18:14:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-923,18:17:00,18:17:00,Canton Center,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-923,18:26:00,18:26:00,Stoughton,8,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-924,19:19:00,19:19:00,Stoughton,8,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-924,19:33:00,19:33:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-924,19:44:00,19:44:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-924,19:49:00,19:49:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-925,18:30:00,18:30:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-925,18:35:00,18:35:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-925,18:38:00,18:38:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-925,18:48:00,18:48:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-925,18:57:00,18:57:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-925,19:00:00,19:00:00,Canton Center,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-925,19:09:00,19:09:00,Stoughton,8,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-926,19:35:00,19:35:00,Stoughton,8,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-926,19:45:00,19:45:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-926,19:54:00,19:54:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-926,20:04:00,20:04:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-926,20:09:00,20:09:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-927,19:45:00,19:45:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-927,19:50:00,19:50:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-927,19:53:00,19:53:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-927,20:03:00,20:03:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-927,20:08:00,20:08:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-927,20:14:00,20:14:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-927,20:17:00,20:17:00,Canton Center,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-927,20:26:00,20:26:00,Stoughton,8,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-928,20:42:00,20:42:00,Stoughton,8,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-928,20:52:00,20:52:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-928,20:57:00,20:57:00,Route 128,11,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-928,21:02:00,21:02:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-928,21:10:00,21:10:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-928,21:15:00,21:15:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-929,20:55:00,20:55:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-929,21:00:00,21:00:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-929,21:03:00,21:03:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-929,21:13:00,21:13:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-929,21:18:00,21:18:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-929,21:24:00,21:24:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-929,21:27:00,21:27:00,Canton Center,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-929,21:35:00,21:35:00,Stoughton,8,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-930,21:50:00,21:50:00,Stoughton,8,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-930,22:00:00,22:00:00,Canton Junction,10,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-930,22:09:00,22:09:00,Hyde Park,12,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-930,22:19:00,22:19:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-930,22:24:00,22:24:00,South Station,15,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-931,23:00:00,23:00:00,South Station,1,,0,1,1
+CR-Providence-CR-Weekday-Providence-Dec13-931,23:05:00,23:05:00,Back Bay,2,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-931,23:08:00,23:08:00,Ruggles,3,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-931,23:17:00,23:17:00,Hyde Park,4,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-931,23:22:00,23:22:00,Route 128,5,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-931,23:28:00,23:28:00,Canton Junction,6,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-931,23:31:00,23:31:00,Canton Center,7,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-931,23:39:00,23:39:00,Stoughton,8,,1,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-932,23:53:00,23:53:00,Stoughton,8,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-932,24:03:00,24:03:00,Canton Junction,10,,3,3,1
+CR-Providence-CR-Weekday-Providence-Dec13-932,24:08:00,24:08:00,Route 128,11,,3,3,1
+CR-Providence-CR-Weekday-Providence-Dec13-932,24:20:00,24:20:00,Back Bay,14,,0,0,1
+CR-Providence-CR-Weekday-Providence-Dec13-932,24:25:00,24:25:00,South Station,15,,1,0,1
