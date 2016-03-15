@@ -34,7 +34,7 @@ self._processGTFSData = function(gtfsData) {
     return tx.complete;
   }).then(function() {
     console.log('added entries to indexDB trips');
-  }).error(function(error) {
+  }).catch(function(error) {
     console.log(error);
   });
 }
