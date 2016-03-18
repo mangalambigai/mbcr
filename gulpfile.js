@@ -7,6 +7,9 @@ var uglify = require('gulp-uglify');
 var babel = require('gulp-babel');
 var fs = require("fs");
 var browserify = require("browserify");
+var sourcemaps = require('gulp-sourcemaps');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 
 gulp.task('default', ['copy-html', 'copy-txt', 'styles', 'lint', 'scripts'],
     function () {
@@ -40,10 +43,15 @@ gulp.task('scripts', function () {
         .pipe(babel())
         .pipe(gulp.dest('dist/'));*/
 
-    browserify(["./sw.js"])
+    browserify({entries:["./sw.js"], debug:true})
         .transform("babelify", {presets: ["es2015"]})
         .bundle()
-        .pipe(fs.createWriteStream("dist/sw.js"));
+        .pipe(source('sw.js'))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(sourcemaps.write('./'))
+ //       .pipe(fs.createWriteStream("dist/sw.js"));
+        .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('scripts-dist', function () {
