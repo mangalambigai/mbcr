@@ -39,9 +39,6 @@ gulp.task('scripts', function () {
     gulp.src('js/**/*.js')
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist/js'));
-/*    gulp.src('sw.js')
-        .pipe(babel())
-        .pipe(gulp.dest('dist/'));*/
 
     browserify({entries:["./sw.js"], debug:true})
         .transform("babelify", {presets: ["es2015"]})
@@ -50,7 +47,6 @@ gulp.task('scripts', function () {
         .pipe(buffer())
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sourcemaps.write('./'))
- //       .pipe(fs.createWriteStream("dist/sw.js"));
         .pipe(gulp.dest('dist/'));
 });
 
@@ -59,16 +55,16 @@ gulp.task('scripts-dist', function () {
         .pipe(concat('all.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
-/*    gulp.src('sw.js')
-        .pipe(babel())
-        .pipe(uglify())
-        .pipe(gulp.dest('dist/'));
-*/
-    browserify(["./sw.js"])
+
+    browserify({entries:["./sw.js"], debug:true})
         .transform("babelify", {presets: ["es2015"]})
         .bundle()
+        .pipe(source('sw.js'))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(uglify())
-        .pipe(fs.createWriteStream("dist/sw.js"));
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('copy-html', function () {
