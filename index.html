@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="mbta">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/bootstrapcerulean.css">
     <title>MBTA Commuter Rail</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" ng-controller="ScheduleController" ng-init="init()">
         <div class="row">
             <div class="col-md-12">
                 <h1>MBTA Commuter Rail Schedule</h1>
@@ -20,17 +21,17 @@
                 <form class="form-inline" name="trainForm">
                     <div class="form-group">
                         <label for="departure">Where will you start from? *</label>
-                        <input id="departure" name="departure" list="stations" type="text" class="form-control" placeholder="Departure Station" autofocus required>
+                        <input id="departure" name="departure" list="stations" type="text" class="form-control" placeholder="Departure Station" autofocus required ng-model="depStation">
                     </div>
 
                     <div class="form-group">
                         <label for="arrival">Where do you want to go? *</label>
-                        <input id="arrival" name="arrival" list="stations" type="text" class="form-control" placeholder="Destination Station" required>
+                        <input id="arrival" name="arrival" list="stations" type="text" class="form-control" placeholder="Destination Station" required ng-model="destStation">
                     </div>
 
                     <div class="form-group">
                         <label for="maxtime">How many hours of schedule do you want to see?</label>
-                        <input id="maxtime" type="number" min="1" max="10" step="1" value="2"></input>
+                        <input id="maxtime" type="number" min="1" max="10" step="1" value="2" ng-model="maxHours"></input>
                     </div>
 
                     <datalist id="stations">
@@ -49,17 +50,45 @@
                         <option value="Providence" />
                     </datalist>
 
-                    <button type="button" class="btn btn-primary" onclick="getSchedule()">Get Schedule</button>
+                    <button type="button" class="btn btn-primary" ng-click="getSchedule()">Get Schedule</button>
                 </form>
             </div>
         </div>
         <hr>
         <div class="row">
             <div class="col-md-12">
-                <div class="hidden alert alert-success" id="resultCount"></div>
+                <div ng-show="schedules.length" class="alert alert-success" id="resultCount">
+                    <ng-pluralize count="schedules.length"
+                                     when="{'0': 'There are no trains',
+                                         'one': 'There is 1 train',
+                                         'other': 'There are {} trains'}">
+                    </ng-pluralize>
+                    from {{depStation}} to {{destStation}} in the next {{maxHours}} Hours.
+                </div>
             </div>
         </div>
-        <div class="row" id="results">
+        <div class="row">
+            <div class="col-md-4 col-sm-12" ng-repeat="schedule in schedules">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                        {{schedule.route_name}} {{schedule.trip_name}} {{schedule.direction_name}}
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover table-striped">
+                            <tr><th>Stop</th><th>Arrival</th><th>Departure</th></tr>
+                            <tbody>
+                                <tr ng-repeat="stop in schedule.stops">
+                                    <td>{{stop.stop_name}}</td>
+                                    <td>{{stop.sch_arr_dt}}</td>
+                                    <td>{{stop.sch_dep_dt}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="js/all.js"></script>
