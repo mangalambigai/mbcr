@@ -2,11 +2,17 @@ import idb from 'idb';
 
 var staticCacheName = 'mbta-static-v4';
 
-var dbPromise = idb.open('mbta-db', 1, function(upgradeDb) {
+var dbPromise = idb.open('mbta-db', 5, function(upgradeDb) {
   switch(upgradeDb.oldVersion) {
     case 0:
-      var tripStore = upgradeDb.createObjectStore('trips', {keyPath: 'tripName'});
-      tripStore.createIndex('stop', 'stopName');
+    case 1:
+    case 2:
+    case 3:
+      var tripStore = upgradeDb.createObjectStore('trips', {keyPath: ['tripName','stopName']});
+    case 4:
+      var tripStore1 = upgradeDb.transaction.objectStore('trips');
+      tripStore1.createIndex('stoptime', ['stopName', 'arrival']);
+      //tripStore.createIndex('trip', 'tripName');
   }
 });
 
@@ -20,16 +26,14 @@ self._processGTFSData = function(gtfsData) {
 
     allTextLines.forEach(function(line) {
       var entries = line.split(',');
-      var tripname = entries[0];
-      var arr = entries[1];
-      var dep = entries[2];
-      var stop = entries[3];
+      var tripname = entries[0].replace(/['"]+/g, '');
+      //convert to date so we can compare
+      var arr = new Date('January 1, 1970 ' + entries[1].replace(/['"]+/g, ''));
+      var dep = new Date('January 1, 1970 ' + entries[2].replace(/['"]+/g, ''));
+      var stop = entries[3].replace(/['"]+/g, '');
 
       //add the entry to indexDB trips db
-      tripStore.put({tripName: tripname, arrival: arr, departure: dep, stop: stop});
-
-      //TODO: add the entry to indexDB stops
-
+      tripStore.put({tripName: tripname, arrival: arr, departure: dep, stopName: stop});
     });
     return tx.complete;
   }).then(function() {
@@ -46,23 +50,24 @@ self.addEventListener('install', function(event) {
         '/',
         'js/all.js',
         'css/bootstrapcerulean.css',
-        'stop_times_dev.txt'
+        'stop_times_cr.txt'
         ]);
     })
   );
 
-  //TODO: get gtfs data here and store to indexdb
+  //get the gtfs -stop_times_cr data1 here, and store all the data to indexdb
   event.waitUntil(
-    caches.match('stop_times_dev.txt')
+    caches.match('stop_times_cr.txt')
     .then(function(response) {
       return response.text();
     }).then(function(text) {
-      console.log(text);
       return  self._processGTFSData(text);
     }).catch(function(error) {
       console.log(error);
     })
   );
+
+  //TODO: add stop.txt, trips.txt, and calendar.txt data.
 
 });
 
@@ -84,7 +89,7 @@ self.addEventListener('activate', function(event) {
 
 self.addEventListener('fetch', function(event) {
   var requestUrl = new URL(event.request.url);
-  //console.log(requestUrl);
+  console.log('in fetch',requestUrl);
 
   if (requestUrl.origin === location.origin) {
     //this is a request for a static resource
@@ -97,7 +102,32 @@ self.addEventListener('fetch', function(event) {
   else
   {
     //this is a schedule request, try to get from indexDB and also realtime
+    if (requestUrl.hostname === 'realtime.mbta.com'
+      && requestUrl.pathname === '/developer/api/v2/schedulebystop' )
+    {
+      //stop=Mansfield&max_time=120
 
+    //TODO: get the stop and max_time from requestUrl
+    dbPromise.then(function(db) {
+      var tx = db.transaction('trips');
+      var tripStore = tx.objectStore('trips');
+      var stopIndex = tripStore.index('stoptime');
+      var keyRange = IDBKeyRange.bound(['Mansfield', new Date('January 1, 1970 00:00:00')],
+        ['Mansfield', new Date('January 1, 1970 23:00:00')]);
+      stopIndex.openCursor(keyRange)
+      .then(function logStop(cursor) {
+        if (!cursor)
+          return;
+
+        console.log(cursor.value.tripName);
+
+        return cursor.continue().then(logStop);
+      }).then(function() {
+        console.log('done cursoring');
+      });
+    });
+    //console.log('TODO: get from indexedDB for..',requestUrl.search);
+    }
   }
 
 });
