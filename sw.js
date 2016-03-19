@@ -1,6 +1,6 @@
 import idb from 'idb';
 
-var staticCacheName = 'mbta-static-v4';
+var staticCacheName = 'mbta-static-v5';
 
 var dbPromise = idb.open('mbta-db', 5, function(upgradeDb) {
   switch(upgradeDb.oldVersion) {
@@ -12,7 +12,6 @@ var dbPromise = idb.open('mbta-db', 5, function(upgradeDb) {
     case 4:
       var tripStore1 = upgradeDb.transaction.objectStore('trips');
       tripStore1.createIndex('stoptime', ['stopName', 'arrival']);
-      //tripStore.createIndex('trip', 'tripName');
   }
 });
 
@@ -67,7 +66,7 @@ self.addEventListener('install', function(event) {
     })
   );
 
-  //TODO: add stop.txt, trips.txt, and calendar.txt data.
+  //TODO: addghghg stop.txt, trips.txt, and calendar.txt data.
 
 });
 
@@ -86,10 +85,20 @@ self.addEventListener('activate', function(event) {
   );
 });
 
+self._getSearchParam = function (searchString, param) {
+  var loc = searchString.indexOf(param+'=')+param.length+1;
+  var nextloc = searchString.indexOf('&', loc);
+  if (nextloc > -1)
+  {
+    return searchString.substr(loc, nextloc-loc);
+  }
+  else
+    return searchString.substr(loc);
+};
 
 self.addEventListener('fetch', function(event) {
   var requestUrl = new URL(event.request.url);
-  console.log('in fetch',requestUrl);
+  //console.log('in fetch',requestUrl);
 
   if (requestUrl.origin === location.origin) {
     //this is a request for a static resource
@@ -105,31 +114,37 @@ self.addEventListener('fetch', function(event) {
     if (requestUrl.hostname === 'realtime.mbta.com'
       && requestUrl.pathname === '/developer/api/v2/schedulebystop' )
     {
-      //stop=Mansfield&max_time=120
 
-    //TODO: get the stop and max_time from requestUrl
-    dbPromise.then(function(db) {
-      var tx = db.transaction('trips');
-      var tripStore = tx.objectStore('trips');
-      var stopIndex = tripStore.index('stoptime');
-      var keyRange = IDBKeyRange.bound(['Mansfield', new Date('January 1, 1970 00:00:00')],
-        ['Mansfield', new Date('January 1, 1970 23:00:00')]);
-      stopIndex.openCursor(keyRange)
-      .then(function logStop(cursor) {
-        if (!cursor)
-          return;
+    // get the stop and max_time from requestUrl
+      var stop = self._getSearchParam(requestUrl.search, 'stop');
+      var max_time = self._getSearchParam(requestUrl.search, 'max_time');
 
-        console.log(cursor.value.tripName);
+      dbPromise.then(function(db) {
+        var tx = db.transaction('trips');
+        var tripStore = tx.objectStore('trips');
+        var stopIndex = tripStore.index('stoptime');
+        var keyRange = IDBKeyRange.bound([stop, new Date('January 1, 1970 00:00:00')],
+          [stop, new Date('January 1, 1970 23:00:00')]);
+        stopIndex.openCursor(keyRange)
+        .then(function logStop(cursor) {
+          if (!cursor)
+            return;
 
-        return cursor.continue().then(logStop);
-      }).then(function() {
-        console.log('done cursoring');
+          console.log(cursor.value.tripName);
+
+          return cursor.continue().then(logStop);
+        }).then(function() {
+          console.log('done cursoring');
+        });
       });
-    });
-    //console.log('TODO: get from indexedDB for..',requestUrl.search);
+    //console.log('TODO: get from indexedDB for',requestUrl.search);
     }
   }
 
 });
 
-
+self.addEventListener('message', function(event) {
+  if (event.data.action === 'skipWaiting') {
+    self.skipWaiting();
+  }
+});
