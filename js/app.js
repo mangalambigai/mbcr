@@ -7,6 +7,7 @@ angular.module('mbta', [])
 
     $scope.init = function() {
         $scope.schedules=[];
+        $scope.maxHours = 2;
     };
 
     $scope.getSchedule = function() {
@@ -18,7 +19,7 @@ angular.module('mbta', [])
         fetch(
             'http://realtime.mbta.com/developer/api/v2/schedulebystop?api_key=xGeHtAQ3kk2mYyhD4fO8rw&stop=' +
             depStation + '&max_time=' + maxHours*60, {
-                method: 'GET' //, mode: 'no-cors'
+                method: 'GET'
             }).then(function (response) {
             return response.json();
         }).catch(function (error) {
@@ -92,6 +93,61 @@ angular.module('mbta', [])
             }
         });
     }
+
+})
+
+.controller('ServiceController', function($scope) {
+    $scope.init = function() {
+        $scope.newversion = false;
+        if (!navigator.serviceWorker) return;
+
+        navigator.serviceWorker.register('/sw.js').then(function(reg) {
+            if (!navigator.serviceWorker.controller) {
+              return;
+            }
+
+            if (reg.waiting) {
+              $scope.updateReady(reg.waiting);
+              return;
+            }
+
+            if (reg.installing) {
+              $scope.trackInstalling(reg.installing);
+              return;
+            }
+
+            reg.addEventListener('updatefound', function() {
+              $scope.trackInstalling(reg.installing);
+            });
+        });
+        // Ensure refresh is only called once.
+        // This works around a bug in "force update on reload".
+        var refreshing;
+        navigator.serviceWorker.addEventListener('controllerchange', function() {
+            if (refreshing) return;
+            window.location.reload();
+            refreshing = true;
+        });
+    };
+
+    $scope.trackInstalling = function(worker) {
+        worker.addEventListener('statechange', function() {
+            if (worker.state == 'installed') {
+              $scope.updateReady(worker);
+            }
+        });
+    };
+
+    $scope.updateReady = function(worker) {
+        $scope.$apply(function() {
+            $scope.readyWorker = worker;
+            $scope.newUpdateReady = true;
+        });
+    };
+
+    $scope.update = function() {
+        $scope.readyWorker.postMessage({action: 'skipWaiting'});
+    };
 
 });
 
