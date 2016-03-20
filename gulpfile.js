@@ -12,14 +12,12 @@ var buffer = require('vinyl-buffer');
 
 gulp.task('default', ['copy-html', 'copy-txt', 'styles', 'lint', 'scripts'],
     function () {
-        gulp.watch('js/**/*.js', ['lint', 'scripts']);
+        gulp.watch('js/*.js', ['lint', 'scripts']);
         gulp.watch('sw.js', ['lint', 'scripts']);
-        gulp.watch('partials/**/*.html', ['copy-html']);
         gulp.watch('index.html', ['copy-html']);
         gulp.watch('data/*.txt', ['copy-txt']);
         gulp.watch('./dist/index.html').on('change', browserSync.reload);
-        gulp.watch('./dist/partials/*.html').on('change', browserSync.reload);
-        gulp.watch('./dist/js/**/*.js').on('change', browserSync.reload);
+        gulp.watch('./dist/js/*.js').on('change', browserSync.reload);
 
         browserSync.init({
             server: './dist'
@@ -39,6 +37,9 @@ gulp.task('scripts', function () {
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist/js'));
 
+    gulp.src('js/lib/*.js')
+        .pipe(gulp.dest('dist/js/lib'));
+
     browserify({entries:['./sw.js'], debug:true})
         .transform('babelify', {presets: ['es2015']})
         .bundle()
@@ -54,6 +55,9 @@ gulp.task('scripts-dist', function () {
         .pipe(concat('all.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
+
+    gulp.src('js/lib/*.js')
+        .pipe(gulp.dest('dist/js/lib'));
 
     browserify({entries:['./sw.js'], debug:true})
         .transform('babelify', {presets: ['es2015']})

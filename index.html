@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/bootstrapcerulean.css">
     <title>MBTA Commuter Rail</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="js/lib/angular.min.js"></script>
 </head>
 
 <body>
@@ -57,8 +57,8 @@
         <hr>
         <div class="row">
             <div class="col-md-12">
-                <div ng-show="schedules.length" class="alert alert-success" id="resultCount">
-                    <ng-pluralize count="schedules.length"
+                <div ng-show="scheduleCount" class="alert alert-success" id="resultCount">
+                    <ng-pluralize count="scheduleCount"
                                      when="{'0': 'There are no trains',
                                          'one': 'There is 1 train',
                                          'other': 'There are {} trains'}">
