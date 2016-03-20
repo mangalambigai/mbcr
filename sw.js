@@ -1,7 +1,10 @@
 import idb from 'idb';
 
-var staticCacheName = 'mbta-static-v1';
+var staticCacheName = 'mbta-static-v2';
 
+/**
+ * Install the database
+ */
 var dbPromise = idb.open('mbta', 1, function(upgradeDb) {
     switch (upgradeDb.oldVersion) {
         case 0:
@@ -19,6 +22,9 @@ var dbPromise = idb.open('mbta', 1, function(upgradeDb) {
     }
 });
 
+/**
+ * Load the data from stop_times_cr.txt to indexedDB
+ */
 self._processStopTimesData = function(gtfsData) {
 
     dbPromise.then(function(db) {
@@ -53,6 +59,9 @@ self._processStopTimesData = function(gtfsData) {
     });
 };
 
+/**
+ * Load the data from trips_cr.txt to indexedDB
+ */
 self._processTripsData = function(gtfsData) {
 
     dbPromise.then(function(db) {
@@ -86,6 +95,9 @@ self._processTripsData = function(gtfsData) {
     });
 };
 
+/**
+ * Load the data from calendar_cr.txt to indexedDB
+ */
 self._processCalendarData = function(gtfsData) {
 
     dbPromise.then(function(db) {
@@ -127,12 +139,17 @@ self._processCalendarData = function(gtfsData) {
     });
 };
 
+/**
+ * Update the cache on install
+ */
 self.addEventListener('install', function(event) {
     event.waitUntil(
         caches.open(staticCacheName).then(function(cache) {
             return cache.addAll([
                 '/',
                 'js/all.js',
+                'js/lib/angular.min.js',
+                'favicon.ico',
                 'css/bootstrapcerulean.css',
                 'data/stop_times_cr.txt',
                 'data/trips_cr.txt',
@@ -180,6 +197,9 @@ self.addEventListener('install', function(event) {
 
 });
 
+/**
+ * Cleanup cache on activation
+ */
 self.addEventListener('activate', function(event) {
     event.waitUntil(
         caches.keys().then(function(cacheNames) {
@@ -195,6 +215,9 @@ self.addEventListener('activate', function(event) {
     );
 });
 
+/**
+ * Gets the parameter from the url search string
+ */
 self._getSearchParam = function(searchString, param) {
     var loc = searchString.indexOf(param + '=') + param.length + 1;
     var nextloc = searchString.indexOf('&', loc);
@@ -204,9 +227,11 @@ self._getSearchParam = function(searchString, param) {
         return searchString.substr(loc);
 };
 
+/**
+ * Responds with data from cache when the file/data is available
+ */
 self.addEventListener('fetch', function(event) {
     var requestUrl = new URL(event.request.url);
-    //console.log('in fetch',requestUrl);
 
     if (requestUrl.origin === location.origin) {
         //this is a request for a static resource
@@ -252,6 +277,9 @@ self.addEventListener('fetch', function(event) {
 
 });
 
+/**
+ * Responds to skipWaiting messages from controller
+ */
 self.addEventListener('message', function(event) {
     if (event.data.action === 'skipWaiting') {
         self.skipWaiting();

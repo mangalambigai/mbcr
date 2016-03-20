@@ -1,21 +1,47 @@
 'use strict';
 
-angular.module('mbta', [])
+/**
+ * @ngdoc object
+ * @name mbtaApp
+ *
+ * @description
+ * Angular app
+ *
+ */
+ angular.module('mbta', [])
 
+/**
+ * @ngdoc controller
+ * @name ScheduleController
+ *
+ * @description
+ * Controller for index.html
+ *
+ */
 .controller('ScheduleController', function($scope) {
     var scheduleList = this;
 
+/**
+ * Initializes the variables
+ */
     $scope.init = function() {
         $scope.schedules = [];
         $scope.maxHours = 2;
     };
 
+/**
+ * Gets the schedule from departure station to destination station for the next maxHours
+ */
     $scope.getSchedule = function() {
         if ($scope.depStation && $scope.destStation)
             $scope.getTripsByStation($scope.depStation, $scope.destStation, $scope.maxHours);
     };
 
+/**
+ * Fetches the trips from depStation for next maxHours and then displays them
+ */
     $scope.getTripsByStation = function(depStation, destStation, maxHours) {
+        //Fetch all the trips from depStation for the next maxHours
         fetch(
             'http://realtime.mbta.com/developer/api/v2/schedulebystop?api_key=xGeHtAQ3kk2mYyhD4fO8rw&stop=' +
             depStation + '&max_time=' + maxHours * 60, {
@@ -31,12 +57,15 @@ angular.module('mbta', [])
                 mode.route.forEach(function(route) {
                     route.direction.forEach(function(direction) {
                         direction.trip.forEach(function(trip) {
+                            //store the tripIds
                             tripids.push(trip.trip_id);
                         });
                     });
                 });
             });
 
+        //get the train schedule for the trips,
+        //if they go to destination station, display them
             Promise.all(tripids.map($scope.getScheduleByTrip))
                 .then(function(response) {
                     $scope.displaySchedules(response, depStation, destStation, maxHours);
@@ -47,6 +76,9 @@ angular.module('mbta', [])
         });
     };
 
+    /**
+     * Gets the schedule for a particular trip
+     */
     $scope.getScheduleByTrip = function(trip) {
         return fetch('http://realtime.mbta.com/developer/api/v2/schedulebytrip?' +
             'api_key=xGeHtAQ3kk2mYyhD4fO8rw&trip=' + trip, {
@@ -56,15 +88,22 @@ angular.module('mbta', [])
         });
     };
 
+    /**
+     * Displays the stop names, arrival and departure times
+     * for the trips that go from departure to destination station
+     */
     $scope.displaySchedules = function(schedules, depStation, destStation, maxHours) {
         schedules.forEach(function(schedule) {
             var foundStart = false,
                 foundStop = false;
             var stops = [];
+
             angular.forEach(schedule.stop, function(stop) {
+
                 if (stop.stop_name === depStation)
                     foundStart = true;
 
+                //only display the stations between starting and destination
                 if (foundStart && !foundStop) {
 
                     if (stop.stop_name === destStation)
@@ -84,6 +123,7 @@ angular.module('mbta', [])
                 }
             });
 
+            //Display the trip only if it goes to the destination station
             if (foundStop) {
                 $scope.$apply(function() {
                     $scope.schedules.push({
@@ -95,11 +135,24 @@ angular.module('mbta', [])
                 });
             }
         });
+
+        $scope.scheduleCount = $scope.schedules.length;
     };
 
 })
 
+/**
+ * @ngdoc controller
+ * @name ServiceController
+ *
+ * @description
+ * Controller for service worker and its updates
+ */
 .controller('ServiceController', function($scope) {
+
+    /**
+     * Starts the service worker
+     */
     $scope.init = function() {
         $scope.newversion = false;
         if (!navigator.serviceWorker) return;
@@ -133,6 +186,9 @@ angular.module('mbta', [])
         });
     };
 
+    /**
+     * When a worker is installed, display prompt
+     */
     $scope.trackInstalling = function(worker) {
         worker.addEventListener('statechange', function() {
             if (worker.state == 'installed') {
@@ -141,6 +197,10 @@ angular.module('mbta', [])
         });
     };
 
+
+    /**
+     * When a worker is installed, display prompt
+     */
     $scope.updateReady = function(worker) {
         $scope.$apply(function() {
             $scope.readyWorker = worker;
@@ -148,6 +208,9 @@ angular.module('mbta', [])
         });
     };
 
+    /**
+     * When user wants to upgrade, tell the worker to skip waiting
+     */
     $scope.update = function() {
         $scope.readyWorker.postMessage({
             action: 'skipWaiting'
