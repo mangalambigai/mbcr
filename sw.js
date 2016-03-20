@@ -1,23 +1,59 @@
 import idb from 'idb';
 
-var staticCacheName = 'mbta-static-v5';
+var staticCacheName = 'mbta-static-v1';
 
-var dbPromise = idb.open('mbta-db', 5, function(upgradeDb) {
+var dbPromise = idb.open('mbta', 1, function(upgradeDb) {
     switch (upgradeDb.oldVersion) {
         case 0:
-        case 1:
-        case 2:
-        case 3:
-            var tripStore = upgradeDb.createObjectStore('trips', {
+            var stopTimeStore = upgradeDb.createObjectStore('stoptimes', {
                 keyPath: ['tripName', 'stopName']
             });
-        case 4:
-            var tripStore1 = upgradeDb.transaction.objectStore('trips');
-            tripStore1.createIndex('stoptime', ['stopName', 'arrival']);
+            stopTimeStore.createIndex('stoptime', ['stopName', 'arrival']);
+
+            var tripStore = upgradeDb.createObjectStore('trips', {
+                keyPath: ['tripName']
+            });
+            var calendarStore = upgradeDb.createObjectStore('calendar', {
+                keyPath: ['serviceId']
+            });
     }
 });
 
-self._processGTFSData = function(gtfsData) {
+self._processStopTimesData = function(gtfsData) {
+
+    dbPromise.then(function(db) {
+        var allTextLines = gtfsData.split(/\r\n|\n/);
+
+        var tx = db.transaction('stoptimes', 'readwrite');
+        var stopTimeStore = tx.objectStore('stoptimes');
+
+        allTextLines.forEach(function(line) {
+            if (line.trim().length > 0) {
+                var entries = line.split(',');
+                var tripname = entries[0].replace(/['"]+/g, '');
+                //convert to date so we can compare
+                var arr = new Date('January 1, 1970 ' + entries[1].replace(/['"]+/g, ''));
+                var dep = new Date('January 1, 1970 ' + entries[2].replace(/['"]+/g, ''));
+                var stop = entries[3].replace(/['"]+/g, '');
+
+                //add the entry to indexDB stoptimes store
+                stopTimeStore.put({
+                    tripName: tripname,
+                    arrival: arr,
+                    departure: dep,
+                    stopName: stop
+                });
+            }
+        });
+        return tx.complete;
+    }).then(function() {
+        console.log('added entries to indexDB stopTimes');
+    }).catch(function(error) {
+        console.log(error);
+    });
+};
+
+self._processTripsData = function(gtfsData) {
 
     dbPromise.then(function(db) {
         var allTextLines = gtfsData.split(/\r\n|\n/);
@@ -26,24 +62,66 @@ self._processGTFSData = function(gtfsData) {
         var tripStore = tx.objectStore('trips');
 
         allTextLines.forEach(function(line) {
-            var entries = line.split(',');
-            var tripname = entries[0].replace(/['"]+/g, '');
-            //convert to date so we can compare
-            var arr = new Date('January 1, 1970 ' + entries[1].replace(/['"]+/g, ''));
-            var dep = new Date('January 1, 1970 ' + entries[2].replace(/['"]+/g, ''));
-            var stop = entries[3].replace(/['"]+/g, '');
+            if (line.trim().length > 0) {
+                var entries = line.split(',');
+                var routename = entries[0].replace(/['"]+/g, '');
+                var servicename = entries[1].replace(/['"]+/g, '');
+                var tripname = entries[2].replace(/['"]+/g, '');
+                var direction = entries[5].replace(/['"]+/g, '');
 
-            //add the entry to indexDB trips db
-            tripStore.put({
-                tripName: tripname,
-                arrival: arr,
-                departure: dep,
-                stopName: stop
-            });
+                //add the entry to indexDB trips store
+                tripStore.put({
+                    tripName: tripname,
+                    routeName: routename,
+                    serviceName: servicename,
+                    direction: direction
+                });
+            }
         });
         return tx.complete;
     }).then(function() {
-        console.log('added entries to indexDB trips');
+        console.log('added entries to indexDB trips store');
+    }).catch(function(error) {
+        console.log(error);
+    });
+};
+
+self._processCalendarData = function(gtfsData) {
+
+    dbPromise.then(function(db) {
+        var allTextLines = gtfsData.split(/\r\n|\n/);
+
+        var tx = db.transaction('calendar', 'readwrite');
+        var calendarStore = tx.objectStore('calendar');
+
+        allTextLines.forEach(function(line) {
+            if (line.trim().length > 0) {
+                var entries = line.split(',');
+                var servicename = entries[0].replace(/['"]+/g, '');
+                var monday = entries[1].replace(/['"]+/g, '');
+                var tuesday = entries[2].replace(/['"]+/g, '');
+                var wednesday = entries[3].replace(/['"]+/g, '');
+                var thursday = entries[4].replace(/['"]+/g, '');
+                var friday = entries[5].replace(/['"]+/g, '');
+                var saturday = entries[6].replace(/['"]+/g, '');
+                var sunday = entries[7].replace(/['"]+/g, '');
+
+                //add the entry to indexDB calendar store
+                calendarStore.put({
+                    serviceId: servicename,
+                    monday: monday,
+                    tuesday: tuesday,
+                    wednesday: wednesday,
+                    thursday: thursday,
+                    friday: friday,
+                    saturday: saturday,
+                    sunday: sunday
+                });
+            }
+        });
+        return tx.complete;
+    }).then(function() {
+        console.log('added entries to indexDB calendar store');
     }).catch(function(error) {
         console.log(error);
     });
@@ -56,24 +134,49 @@ self.addEventListener('install', function(event) {
                 '/',
                 'js/all.js',
                 'css/bootstrapcerulean.css',
-                'stop_times_cr.txt'
+                'data/stop_times_cr.txt',
+                'data/trips_cr.txt',
+                'data/calendar_cr.txt'
             ]);
         })
     );
 
-    //get the gtfs -stop_times_cr data1 here, and store all the data to indexdb
+    //get the gtfs -stop_times_cr data, and store it to indexdb
     event.waitUntil(
-        caches.match('stop_times_cr.txt')
+        caches.match('data/stop_times_cr.txt')
         .then(function(response) {
             return response.text();
         }).then(function(text) {
-            return self._processGTFSData(text);
+            return self._processStopTimesData(text);
         }).catch(function(error) {
-            console.log(error);
+            console.log('Error storing stop times data to IndexedDb', error);
         })
     );
 
-    //TODO: addghghg stop.txt, trips.txt, and calendar.txt data.
+    //get the gtfs -trips_cr data, and store it to indexdb
+    event.waitUntil(
+        caches.match('data/trips_cr.txt')
+        .then(function(response) {
+            return response.text();
+        }).then(function(text) {
+            return self._processTripsData(text);
+        }).catch(function(error) {
+            console.log('Error storing trips data to IndexedDb', error);
+        })
+    );
+
+    //get the gtfs -calendar_cr data, and store it to indexdb
+    event.waitUntil(
+        caches.match('data/calendar_cr.txt')
+        .then(function(response) {
+            return response.text();
+        }).then(function(text) {
+            return self._processCalendarData(text);
+        }).catch(function(error) {
+            console.log('Error storing calendar data to IndexedDb', error);
+        })
+    );
+    //TODO: add stop.txt data.
 
 });
 
@@ -125,14 +228,17 @@ self.addEventListener('fetch', function(event) {
             var endTime = new Date(startTime.valueOf() + max_time * 60 * 1000);
 
             dbPromise.then(function(db) {
-                var tx = db.transaction('trips');
-                var tripStore = tx.objectStore('trips');
-                var stopIndex = tripStore.index('stoptime');
+                var tx = db.transaction('stoptimes');
+                var stopTimeStore = tx.objectStore('stoptimes');
+                var stopIndex = stopTimeStore.index('stoptime');
                 var keyRange = IDBKeyRange.bound([stop, startTime], [stop, endTime]);
                 stopIndex.openCursor(keyRange)
                     .then(function logStop(cursor) {
                         if (!cursor)
                             return;
+                        //TODO: fetch the service id, route id, direction from trips datastore,
+                        //then fetch the calendar for the service.
+                        //make sure the trip runs on that day
 
                         console.log(cursor.value.tripName, cursor.value.stopName, cursor.value.arrival);
 
