@@ -5,8 +5,7 @@ var jasmine = require('gulp-jasmine-phantom');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var babel = require('gulp-babel');
-var fs = require("fs");
-var browserify = require("browserify");
+var browserify = require('browserify');
 var sourcemaps = require('gulp-sourcemaps');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
@@ -40,8 +39,8 @@ gulp.task('scripts', function () {
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist/js'));
 
-    browserify({entries:["./sw.js"], debug:true})
-        .transform("babelify", {presets: ["es2015"]})
+    browserify({entries:['./sw.js'], debug:true})
+        .transform('babelify', {presets: ['es2015']})
         .bundle()
         .pipe(source('sw.js'))
         .pipe(buffer())
@@ -56,8 +55,8 @@ gulp.task('scripts-dist', function () {
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
 
-    browserify({entries:["./sw.js"], debug:true})
-        .transform("babelify", {presets: ["es2015"]})
+    browserify({entries:['./sw.js'], debug:true})
+        .transform('babelify', {presets: ['es2015']})
         .bundle()
         .pipe(source('sw.js'))
         .pipe(buffer())
