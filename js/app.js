@@ -135,8 +135,9 @@
                 });
             }
         });
-
-        $scope.scheduleCount = $scope.schedules.length;
+        $scope.$apply(function() {
+            $scope.scheduleCount = $scope.schedules.length;
+        });
     };
 
 })
