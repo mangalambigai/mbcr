@@ -240,7 +240,8 @@ self.addEventListener('fetch', function(event) {
         );
     } else {
         //this is a schedule request, try to get from indexDB and also realtime
-        if (requestUrl.hostname === 'realtime.mbta.com' && requestUrl.pathname === '/developer/api/v2/schedulebystop') {
+        if (requestUrl.hostname === 'realtime.mbta.com'
+            && requestUrl.pathname === '/developer/api/v2/schedulebystop') {
 
             // get the stop and max_time (in minutes) from requestUrl
             var stop = self._getSearchParam(requestUrl.search, 'stop');
@@ -255,33 +256,38 @@ self.addEventListener('fetch', function(event) {
             var tripIds=[];
 
             dbPromise.then(function(db) {
-                var tx = db.transaction(['stoptimes', 'trips', 'calendar']);
+                var tx = db.transaction(['stoptimes']);
                 var stopTimeStore = tx.objectStore('stoptimes');
-                var tripStore = tx.objectStore('trips');
-                var calendarStore = tx.objectStore('calendar');
 
                 var stopIndex = stopTimeStore.index('stoptime');
                 var keyRange = IDBKeyRange.bound([stop, startTime], [stop, endTime]);
                 stopIndex.openCursor(keyRange)
                     .then(function logStop(cursor) {
-                        //fetch the service id, route id, direction from trips datastore,
-                        //then fetch the calendar for the service.
-                        //make sure the trip runs on that day
                         if (!cursor)
                             return;
-                        var availability = self._getTripData(tripStore, calendarStore, cursor.value.tripName, day);
-                        if (availability == '1')
-                        {
-                            //trip runs today
-                            console.log('Adding to tripIds', cursor.value.tripName);
-                            tripIds.push(cursor.value.tripName);
-                        }
+                        tripIds.push(cursor.value.tripName);
 
                         return cursor.continue().then(logStop);
                     }).then(function() {
-                        console.log('done cursoring');
                         console.log('trip ids from indexedDB', tripIds);
                         //event.respondWith(new Response(JSON.stringify({fromIDB: true, tripIds: tripIds}), {'Content-Type':'application/json; charset=utf-8'}))
+                    }).then(function() {
+
+                        //fetch the service id, route id, direction from trips datastore,
+                        //then fetch the calendar for the service.
+                        //make sure the trip runs on that day
+                        Promise.all(tripIds.map(self._getTripData))
+                        .then(function(response) {
+                            console.log(response);
+/*
+    .then(function(calendarval) {
+        console.log('from calendar', calendarval);
+        var currentDate = new Date();
+        var day = currentDate.getDay();
+        return calendarval.days[day];
+    });
+*/
+                        });
                     });
             });
 
@@ -293,18 +299,21 @@ self.addEventListener('fetch', function(event) {
 /**
  * Gets trip and calendar data and ensures its available for today
  */
-self._getTripData = function(tripStore, calendarStore, tripName, day) {
-
-    dbPromise.then(function(db){
+self._getTripData = function( tripName ) {
+    var tripPromise = dbPromise.then(function(db) {
+        var tx = db.transaction(['trips']);
+        var tripStore = tx.objectStore('trips');
         return tripStore.get(tripName);
-    }).then(function(tripval) {
-//        console.log('value from trip db',tripval);
-        return calendarStore.get(tripval.serviceName);
-    }).then(function(calendarval) {
-//        console.log('from calendar', calendarval);
-        return calendarval.days[day];
     });
-
+    var calendarPromise = Promise.all([dbPromise, tripPromise]).then(function(param) {
+        var db = param[0];
+        var tripval = param[1];
+        console.log('value from trip db',tripval);
+        var tx = db.transaction(['calendar']);
+        var calendarStore = tx.objectStore('calendar');
+        return calendarStore.get(tripval.serviceName);
+    });
+    return Promise.all([tripPromise, calendarPromise])
 };
 /**
  * Responds to skipWaiting messages from controller
