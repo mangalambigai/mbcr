@@ -63,7 +63,8 @@
                                          'one': 'There is 1 train',
                                          'other': 'There are {} trains'}">
                     </ng-pluralize>
-                    from {{depStation}} to {{destStation}} in the next {{maxHours}} Hours.
+                    from {{depStation}} to {{destStation}} in the next
+                    <ng-pluralize count="maxHours" when="{'one': 'hour.', 'other': '{} hours.'}"></ng-pluralize>
                 </div>
             </div>
         </div>
