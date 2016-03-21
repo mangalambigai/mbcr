@@ -1,23 +1,26 @@
 import idb from 'idb';
 
-var staticCacheName = 'mbta-static-v2';
+var staticCacheName = 'mbta-static-v1';
 
 /**
  * Install the database
  */
-var dbPromise = idb.open('mbta', 1, function(upgradeDb) {
+var dbPromise = idb.open('mbta', 4, function(upgradeDb) {
     switch (upgradeDb.oldVersion) {
         case 0:
+        case 1:
+        case 2:
+        case 3:
             var stopTimeStore = upgradeDb.createObjectStore('stoptimes', {
                 keyPath: ['tripName', 'stopName']
             });
             stopTimeStore.createIndex('stoptime', ['stopName', 'arrival']);
 
             var tripStore = upgradeDb.createObjectStore('trips', {
-                keyPath: ['tripName']
+                keyPath: 'tripName'
             });
             var calendarStore = upgradeDb.createObjectStore('calendar', {
-                keyPath: ['serviceId']
+                keyPath: 'serviceId'
             });
     }
 });
@@ -149,7 +152,6 @@ self.addEventListener('install', function(event) {
                 '/',
                 'js/all.js',
                 'js/lib/angular.min.js',
-                'favicon.ico',
                 'css/bootstrapcerulean.css',
                 'data/stop_times_cr.txt',
                 'data/trips_cr.txt',
@@ -251,21 +253,26 @@ self.addEventListener('fetch', function(event) {
             var currentDate = new Date();
             var startTime = new Date('January 1, 1970 ' + currentDate.toLocaleTimeString());
             var endTime = new Date(startTime.valueOf() + max_time * 60 * 1000);
+            var day = currentDate.getDay();
 
             dbPromise.then(function(db) {
-                var tx = db.transaction('stoptimes');
+                var tx = db.transaction(['stoptimes', 'trips', 'calendar']);
                 var stopTimeStore = tx.objectStore('stoptimes');
+                var tripStore = tx.objectStore('trips');
+                var calendarStore = tx.objectStore('calendar');
+
                 var stopIndex = stopTimeStore.index('stoptime');
                 var keyRange = IDBKeyRange.bound([stop, startTime], [stop, endTime]);
                 stopIndex.openCursor(keyRange)
                     .then(function logStop(cursor) {
                         if (!cursor)
                             return;
-                        //TODO: fetch the service id, route id, direction from trips datastore,
+                        //fetch the service id, route id, direction from trips datastore,
                         //then fetch the calendar for the service.
                         //make sure the trip runs on that day
+                        var data = self._getTripData(tripStore, calendarStore, cursor.value.tripName, day);
 
-                        console.log(cursor.value.tripName, cursor.value.stopName, cursor.value.arrival);
+                        console.log(cursor.value.tripName);
 
                         return cursor.continue().then(logStop);
                     }).then(function() {
@@ -277,6 +284,20 @@ self.addEventListener('fetch', function(event) {
 
 });
 
+/**
+ * Gets trip and calendar data and ensures its available for today
+ */
+self._getTripData = function(tripStore, calendarStore, tripName, day) {
+    dbPromise.then(function(db){
+        return tripStore.get(tripName);
+    }).then(function(tripval) {
+        console.log('value from trip db',tripval);
+        return calendarStore.get(tripval.serviceName);
+    }).then(function(calendarval) {
+        console.log(calendarval);
+    })
+
+};
 /**
  * Responds to skipWaiting messages from controller
  */
