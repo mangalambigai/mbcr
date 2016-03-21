@@ -270,23 +270,32 @@ self.addEventListener('fetch', function(event) {
                         return cursor.continue().then(logStop);
                     }).then(function() {
                         console.log('trip ids from indexedDB', tripIds);
-                        //event.respondWith(new Response(JSON.stringify({fromIDB: true, tripIds: tripIds}), {'Content-Type':'application/json; charset=utf-8'}))
                     }).then(function() {
 
                         //fetch the service id, route id, direction from trips datastore,
                         //then fetch the calendar for the service.
-                        //make sure the trip runs on that day
                         Promise.all(tripIds.map(self._getTripData))
-                        .then(function(response) {
-                            console.log(response);
-/*
-    .then(function(calendarval) {
-        console.log('from calendar', calendarval);
-        var currentDate = new Date();
-        var day = currentDate.getDay();
-        return calendarval.days[day];
-    });
-*/
+                        .then(function(tripCalendarDatas) {
+                            console.log(tripCalendarDatas);
+                            //make sure the trip runs on that day
+                            var currentDate = new Date();
+                            var day = currentDate.getDay();
+                            var arrayToReturn = [];
+
+                            tripCalendarDatas.forEach(function(tripCalendarData) {
+                                if (tripCalendarData[1].days[day] === "1") {
+                                    arrayToReturn.push(tripCalendarData[0]);
+                                }
+                            });
+                            event.respondWith(
+                                new Response(
+                                    JSON.stringify({
+                                        fromIDB: true,
+                                        tripIds: tripIds
+                                    }), {
+                                        'Content-Type':'application/json; charset=utf-8'
+                                    })
+                                );
                         });
                     });
             });
