@@ -18,6 +18,7 @@ gulp.task('default', ['copy-html', 'copy-txt', 'styles', 'lint', 'scripts'],
         gulp.watch('data/*.txt', ['copy-txt']);
         gulp.watch('./dist/index.html').on('change', browserSync.reload);
         gulp.watch('./dist/js/*.js').on('change', browserSync.reload);
+        gulp.watch('./dist/sw.js').on('change', browserSync.reload);
 
         browserSync.init({
             server: './dist'
