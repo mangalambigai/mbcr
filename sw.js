@@ -113,24 +113,20 @@ self._processCalendarData = function(gtfsData) {
             if (line.trim().length > 0) {
                 var entries = line.split(',');
                 var servicename = entries[0].replace(/['"]+/g, '');
-                var monday = entries[1].replace(/['"]+/g, '');
-                var tuesday = entries[2].replace(/['"]+/g, '');
-                var wednesday = entries[3].replace(/['"]+/g, '');
-                var thursday = entries[4].replace(/['"]+/g, '');
-                var friday = entries[5].replace(/['"]+/g, '');
-                var saturday = entries[6].replace(/['"]+/g, '');
-                var sunday = entries[7].replace(/['"]+/g, '');
+                var days = [
+                    entries[7], //sunday is 0th day in js, but 7th in gtfs
+                    entries[1],
+                    entries[2],
+                    entries[3],
+                    entries[4],
+                    entries[5],
+                    entries[6],
+                    ];
 
                 //add the entry to indexDB calendar store
                 calendarStore.put({
                     serviceId: servicename,
-                    monday: monday,
-                    tuesday: tuesday,
-                    wednesday: wednesday,
-                    thursday: thursday,
-                    friday: friday,
-                    saturday: saturday,
-                    sunday: sunday
+                    days: days
                 });
             }
         });
@@ -255,6 +251,9 @@ self.addEventListener('fetch', function(event) {
             var endTime = new Date(startTime.valueOf() + max_time * 60 * 1000);
             var day = currentDate.getDay();
 
+            //this array will hold the trip ids to be returned
+            var tripIds=[];
+
             dbPromise.then(function(db) {
                 var tx = db.transaction(['stoptimes', 'trips', 'calendar']);
                 var stopTimeStore = tx.objectStore('stoptimes');
@@ -265,20 +264,27 @@ self.addEventListener('fetch', function(event) {
                 var keyRange = IDBKeyRange.bound([stop, startTime], [stop, endTime]);
                 stopIndex.openCursor(keyRange)
                     .then(function logStop(cursor) {
-                        if (!cursor)
-                            return;
                         //fetch the service id, route id, direction from trips datastore,
                         //then fetch the calendar for the service.
                         //make sure the trip runs on that day
-                        var data = self._getTripData(tripStore, calendarStore, cursor.value.tripName, day);
-
-                        console.log(cursor.value.tripName);
+                        if (!cursor)
+                            return;
+                        var availability = self._getTripData(tripStore, calendarStore, cursor.value.tripName, day);
+                        if (availability == '1')
+                        {
+                            //trip runs today
+                            console.log('Adding to tripIds', cursor.value.tripName);
+                            tripIds.push(cursor.value.tripName);
+                        }
 
                         return cursor.continue().then(logStop);
                     }).then(function() {
                         console.log('done cursoring');
+                        console.log('trip ids from indexedDB', tripIds);
+                        //event.respondWith(new Response(JSON.stringify({fromIDB: true, tripIds: tripIds}), {'Content-Type':'application/json; charset=utf-8'}))
                     });
             });
+
         }
     }
 
@@ -288,14 +294,16 @@ self.addEventListener('fetch', function(event) {
  * Gets trip and calendar data and ensures its available for today
  */
 self._getTripData = function(tripStore, calendarStore, tripName, day) {
+
     dbPromise.then(function(db){
         return tripStore.get(tripName);
     }).then(function(tripval) {
-        console.log('value from trip db',tripval);
+//        console.log('value from trip db',tripval);
         return calendarStore.get(tripval.serviceName);
     }).then(function(calendarval) {
-        console.log(calendarval);
-    })
+//        console.log('from calendar', calendarval);
+        return calendarval.days[day];
+    });
 
 };
 /**
