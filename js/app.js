@@ -51,28 +51,38 @@
         }).catch(function(error) {
             console.log(error);
         }).then(function(trips) {
-
             var tripids = [];
-            trips.mode.forEach(function(mode) {
-                mode.route.forEach(function(route) {
-                    route.direction.forEach(function(direction) {
-                        direction.trip.forEach(function(trip) {
-                            //store the tripIds
-                            tripids.push(trip.trip_id);
+            if (trips.fromIDB)
+            {
+                //this data is from serviceworker and indexeddb - it is flatter
+                trips.tripIds.forEach(function(trip) {
+                    tripids.push(trip.tripName);
+                });
+                console.log('IDB trips in app.js',trips);
+            }
+            else
+            {
+
+                trips.mode.forEach(function(mode) {
+                    mode.route.forEach(function(route) {
+                        route.direction.forEach(function(direction) {
+                            direction.trip.forEach(function(trip) {
+                                //store the tripIds
+                                tripids.push(trip.trip_id);
+                            });
                         });
                     });
                 });
-            });
-
-        //get the train schedule for the trips,
-        //if they go to destination station, display them
+            }
+            //get the train schedule for the trips,
+            //if they go to destination station, display them
             Promise.all(tripids.map($scope.getScheduleByTrip))
-                .then(function(response) {
-                    $scope.displaySchedules(response, depStation, destStation, maxHours);
-                })
-                .catch(function(error) {
-                    console.log(error);
-                });
+            .then(function(response) {
+                $scope.displaySchedules(response, depStation, destStation, maxHours);
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
         });
     };
 
@@ -93,6 +103,8 @@
      * for the trips that go from departure to destination station
      */
     $scope.displaySchedules = function(schedules, depStation, destStation, maxHours) {
+
+        //console.log('from displaySchedules in app.js..',schedules );
         schedules.forEach(function(schedule) {
             var foundStart = false,
                 foundStop = false;
