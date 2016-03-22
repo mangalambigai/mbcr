@@ -5,16 +5,15 @@ var staticCacheName = 'mbta-static-v1';
 /**
  * Install the database
  */
-var dbPromise = idb.open('mbta', 5, function(upgradeDb) {
+var dbPromise = idb.open('mbta', 1, function(upgradeDb) {
     switch (upgradeDb.oldVersion) {
         case 0:
-        case 1:
-        case 2:
-        case 3:
             var stopTimeStore = upgradeDb.createObjectStore('stoptimes', {
-                keyPath: ['tripName', 'stopName']
+                keyPath: ['tripName', 'stopOrder']
             });
             stopTimeStore.createIndex('stoptime', ['stopName', 'arrival']);
+            //this will help get the stoptimes by tripname
+            stopTimeStore.createIndex('tripName', 'tripName');
 
             var tripStore = upgradeDb.createObjectStore('trips', {
                 keyPath: 'tripName'
@@ -22,9 +21,6 @@ var dbPromise = idb.open('mbta', 5, function(upgradeDb) {
             var calendarStore = upgradeDb.createObjectStore('calendar', {
                 keyPath: 'serviceId'
             });
-        case 4:
-            var stopTimeStore1 = upgradeDb.transaction.objectStore('stoptimes');
-            stopTimeStore1.createIndex('tripName', 'tripName');
     }
 });
 
@@ -47,13 +43,15 @@ self._processStopTimesData = function(gtfsData) {
                 var arr = new Date('January 1, 1970 ' + entries[1].replace(/['"]+/g, ''));
                 var dep = new Date('January 1, 1970 ' + entries[2].replace(/['"]+/g, ''));
                 var stop = entries[3].replace(/['"]+/g, '');
+                var stoporder = entries[4].replace(/['"]+/g, '');
 
                 //add the entry to indexDB stoptimes store
                 stopTimeStore.put({
                     tripName: tripname,
                     arrival: arr,
                     departure: dep,
-                    stopName: stop
+                    stopName: stop,
+                    stopOrder: stoporder
                 });
             }
         });
@@ -159,7 +157,7 @@ self.addEventListener('install', function(event) {
         })
     );
 
-    //get the gtfs -stop_times_cr data, and store it to indexdb
+    //get the gtfs -stop_times_cr data, and then store it to indexdb
     event.waitUntil(
         caches.match('data/stop_times_cr.txt')
         .then(function(response) {
@@ -259,7 +257,7 @@ self.addEventListener('fetch', function(event) {
                 event.respondWith(
                     self._getScheduleByTrip(requestUrl)
                     .then(function(response) {
-                        //console.log('from sw.js', response);
+                        console.log('from sw.js', response);
                         return new Response(
                             JSON.stringify( response ),
                             {'Content-Type': 'application/json'}
@@ -375,17 +373,24 @@ self._getScheduleByTrip = function(requestUrl){
                     route_name: values[0].routeName,
                     trip_name: values[0].tripName,
                     direction_name: values[0].direction,
-                    stop: []
                 };
 
+                //UI expects the time to be in epoch time (number of seconds)
+                var stops = [];
                 values[1].forEach(function(stopval) {
-                    ret.stop.push({
+                    stops.push({
+                        stop_order: stopval.stopOrder,
                         stop_name: stopval.stopName,
-                        sch_arr_dt: stopval.arrival,
-                        sch_dep_dt: stopval.departure
+                        sch_arr_dt: stopval.arrival.valueOf()/1000,
+                        sch_dep_dt: stopval.departure.valueOf()/1000
                     });
                 });
-                //console.log('values in _getScheduleByTrip', ret);
+                //important: sort by stop order! UI depends on it
+                stops.sort(function(a,b){
+                    return a.stop_order - b.stop_order;
+                });
+                ret.stop = stops;
+                console.log('values in _getScheduleByTrip', ret);
                 resolve(ret);
             });
         });
