@@ -244,69 +244,86 @@ self.addEventListener('fetch', function(event) {
             && requestUrl.pathname === '/developer/api/v2/schedulebystop') {
 
             // get the stop and max_time (in minutes) from requestUrl
-            var stop = self._getSearchParam(requestUrl.search, 'stop');
-            var max_time = self._getSearchParam(requestUrl.search, 'max_time');
 
-            var currentDate = new Date();
-            var startTime = new Date('January 1, 1970 ' + currentDate.toLocaleTimeString());
-            var endTime = new Date(startTime.valueOf() + max_time * 60 * 1000);
-            var day = currentDate.getDay();
-
-            //this array will hold the trip ids to be returned
-            var tripIds=[];
-
-            dbPromise.then(function(db) {
-                var tx = db.transaction(['stoptimes']);
-                var stopTimeStore = tx.objectStore('stoptimes');
-
-                var stopIndex = stopTimeStore.index('stoptime');
-                var keyRange = IDBKeyRange.bound([stop, startTime], [stop, endTime]);
-                stopIndex.openCursor(keyRange)
-                    .then(function logStop(cursor) {
-                        if (!cursor)
-                            return;
-                        tripIds.push(cursor.value.tripName);
-
-                        return cursor.continue().then(logStop);
-                    }).then(function() {
-                        console.log('trip ids from indexedDB', tripIds);
-                    }).then(function() {
-
-                        //fetch the service id, route id, direction from trips datastore,
-                        //then fetch the calendar for the service.
-                        Promise.all(tripIds.map(self._getTripData))
-                        .then(function(tripCalendarDatas) {
-                            console.log(tripCalendarDatas);
-                            //make sure the trip runs on that day
-                            var currentDate = new Date();
-                            var day = currentDate.getDay();
-                            var arrayToReturn = [];
-
-                            tripCalendarDatas.forEach(function(tripCalendarData) {
-                                if (tripCalendarData[1].days[day] === "1") {
-                                    arrayToReturn.push(tripCalendarData[0]);
-                                }
-                            });
-                            event.respondWith(
-                                new Response(
-                                    JSON.stringify({
-                                        fromIDB: true,
-                                        tripIds: tripIds
-                                    }), {
-                                        'Content-Type':'application/json; charset=utf-8'
-                                    })
-                                );
-                        });
-                    });
-            });
-
+            event.respondWith(
+                self._getTripIds(requestUrl)
+                .then(self._filterTripByDay)
+                .then(function(response) {
+                    return new Response(JSON.stringify({
+                        fromIDB:true,
+                        tripIds: response
+                    }), {'Content-Type': 'application/json'})
+                })
+            );
         }
     }
-
 });
 
 /**
- * Gets trip and calendar data and ensures its available for today
+ * Returns a promise for the trip ids for the stop for the next max_time hours.
+ * stoptimes.txt has the trips - station - arrival and departure times data.
+ */
+self._getTripIds = function (requestUrl) {
+    console.log('in _getTripIds' , requestUrl);
+    return new Promise( function (resolve, reject) {
+        var stop = self._getSearchParam(requestUrl.search, 'stop');
+        var max_time = self._getSearchParam(requestUrl.search, 'max_time');
+
+        var currentDate = new Date();
+        var startTime = new Date('January 1, 1970 ' + currentDate.toLocaleTimeString());
+        var endTime = new Date(startTime.valueOf() + max_time * 60 * 1000);
+        var day = currentDate.getDay();
+
+        //this array will hold the trip ids to be returned
+        var tripIds=[];
+        dbPromise.then(function(db) {
+            var tx = db.transaction(['stoptimes']);
+            var stopTimeStore = tx.objectStore('stoptimes');
+
+            var stopIndex = stopTimeStore.index('stoptime');
+            var keyRange = IDBKeyRange.bound([stop, startTime], [stop, endTime]);
+            stopIndex.openCursor(keyRange)
+            .then(function logStop(cursor) {
+                if (!cursor)
+                    return;
+                tripIds.push(cursor.value.tripName);
+
+                return cursor.continue().then(logStop);
+            }).then(function() {
+                console.log('_getTripIds resolving with ...', tripIds);
+                resolve(tripIds);
+            });
+        });
+    });
+};
+
+/**
+ * Returns a promise for the list of trips filtered by current day
+ * Trips run on the week days specified in calendar.txt
+ */
+self._filterTripByDay = function(tripIds) {
+    return new Promise(function(resolve, reject) {
+        //fetch the service id, route id, direction from trips datastore,
+        //then fetch the calendar for the service.
+        Promise.all(tripIds.map(self._getTripData))
+        .then(function(tripCalendarDatas) {
+            //make sure the trip runs on that day
+            var currentDate = new Date();
+            var day = currentDate.getDay();
+            var arrayToReturn = [];
+
+            tripCalendarDatas.forEach(function(tripCalendarData) {
+                if (tripCalendarData[1].days[day] === "1") {
+                    arrayToReturn.push(tripCalendarData[0]);
+                }
+            });
+            resolve(arrayToReturn);
+        });
+    });
+};
+
+/**
+ * Gets trip and calendar data for the trip and returns them
  */
 self._getTripData = function( tripName ) {
     var tripPromise = dbPromise.then(function(db) {
@@ -317,13 +334,14 @@ self._getTripData = function( tripName ) {
     var calendarPromise = Promise.all([dbPromise, tripPromise]).then(function(param) {
         var db = param[0];
         var tripval = param[1];
-        console.log('value from trip db',tripval);
+        //console.log('value from trip db',tripval);
         var tx = db.transaction(['calendar']);
         var calendarStore = tx.objectStore('calendar');
         return calendarStore.get(tripval.serviceName);
     });
     return Promise.all([tripPromise, calendarPromise])
 };
+
 /**
  * Responds to skipWaiting messages from controller
  */
