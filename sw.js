@@ -5,7 +5,7 @@ var staticCacheName = 'mbta-static-v1';
 /**
  * Install the database
  */
-var dbPromise = idb.open('mbta', 4, function(upgradeDb) {
+var dbPromise = idb.open('mbta', 5, function(upgradeDb) {
     switch (upgradeDb.oldVersion) {
         case 0:
         case 1:
@@ -22,6 +22,9 @@ var dbPromise = idb.open('mbta', 4, function(upgradeDb) {
             var calendarStore = upgradeDb.createObjectStore('calendar', {
                 keyPath: 'serviceId'
             });
+        case 4:
+            var stopTimeStore1 = upgradeDb.transaction.objectStore('stoptimes');
+            stopTimeStore1.createIndex('tripName', 'tripName');
     }
 });
 
@@ -240,21 +243,31 @@ self.addEventListener('fetch', function(event) {
         );
     } else {
         //this is a schedule request, try to get from indexDB and also realtime
-        if (requestUrl.hostname === 'realtime.mbta.com'
-            && requestUrl.pathname === '/developer/api/v2/schedulebystop') {
+        if (requestUrl.hostname === 'realtime.mbta.com') {
+            if( requestUrl.pathname === '/developer/api/v2/schedulebystop') {
+                event.respondWith(
+                    self._getTripIds(requestUrl)
+                    .then(self._filterTripByDay)
+                    .then(function(response) {
+                        return new Response(JSON.stringify({
+                            fromIDB:true,
+                            tripIds: response
+                        }), {'Content-Type': 'application/json'});
+                    })
+                );
+            } else if (requestUrl.pathname === '/developer/api/v2/schedulebytrip') {
+                event.respondWith(
+                    self._getScheduleByTrip(requestUrl)
+                    .then(function(response) {
+                        //console.log('from sw.js', response);
+                        return new Response(
+                            JSON.stringify( response ),
+                            {'Content-Type': 'application/json'}
+                        );
+                    })
+                );
+            }
 
-            // get the stop and max_time (in minutes) from requestUrl
-
-            event.respondWith(
-                self._getTripIds(requestUrl)
-                .then(self._filterTripByDay)
-                .then(function(response) {
-                    return new Response(JSON.stringify({
-                        fromIDB:true,
-                        tripIds: response
-                    }), {'Content-Type': 'application/json'})
-                })
-            );
         }
     }
 });
@@ -264,8 +277,9 @@ self.addEventListener('fetch', function(event) {
  * stoptimes.txt has the trips - station - arrival and departure times data.
  */
 self._getTripIds = function (requestUrl) {
-    console.log('in _getTripIds' , requestUrl);
+    //console.log('in _getTripIds' , requestUrl);
     return new Promise( function (resolve, reject) {
+        // get the stop and max_time (in minutes) from requestUrl
         var stop = self._getSearchParam(requestUrl.search, 'stop');
         var max_time = self._getSearchParam(requestUrl.search, 'max_time');
 
@@ -290,7 +304,7 @@ self._getTripIds = function (requestUrl) {
 
                 return cursor.continue().then(logStop);
             }).then(function() {
-                console.log('_getTripIds resolving with ...', tripIds);
+                //console.log('_getTripIds resolving with ...', tripIds);
                 resolve(tripIds);
             });
         });
@@ -339,9 +353,44 @@ self._getTripData = function( tripName ) {
         var calendarStore = tx.objectStore('calendar');
         return calendarStore.get(tripval.serviceName);
     });
-    return Promise.all([tripPromise, calendarPromise])
+    return Promise.all([tripPromise, calendarPromise]);
 };
 
+/**
+ * Returns a promise for the trip's schedule
+ * stoptimes.txt has the trips - station - arrival and departure times data.
+ */
+self._getScheduleByTrip = function(requestUrl){
+    return new Promise( function (resolve, reject) {
+        var tripId = self._getSearchParam(requestUrl.search, 'trip');
+        dbPromise.then(function(db) {
+            //console.log('in _getScheduleByTrip', tripId);
+            var tx = db.transaction(['stoptimes', 'trips']);
+            var tripStore = tx.objectStore('trips');
+            var stopTimeStore = tx.objectStore('stoptimes');
+            var tripIndex = stopTimeStore.index('tripName');
+            Promise.all( [tripStore.get(tripId), tripIndex.getAll(tripId)])
+            .then(function (values) {
+                var ret = {
+                    route_name: values[0].routeName,
+                    trip_name: values[0].tripName,
+                    direction_name: values[0].direction,
+                    stop: []
+                };
+
+                values[1].forEach(function(stopval) {
+                    ret.stop.push({
+                        stop_name: stopval.stopName,
+                        sch_arr_dt: stopval.arrival,
+                        sch_dep_dt: stopval.departure
+                    });
+                });
+                //console.log('values in _getScheduleByTrip', ret);
+                resolve(ret);
+            });
+        });
+    });
+};
 /**
  * Responds to skipWaiting messages from controller
  */
