@@ -57,14 +57,14 @@
         <hr>
         <div class="row">
             <div class="col-md-12">
-                <div ng-show="scheduleCount" class="alert alert-success" id="resultCount">
+                <div ng-show="scheduleAvailable" class="alert alert-success" id="resultCount">
                     <ng-pluralize count="scheduleCount"
                                      when="{'0': 'There are no trains',
                                          'one': 'There is 1 train',
                                          'other': 'There are {} trains'}">
                     </ng-pluralize>
-                    from {{depStation}} to {{destStation}} in the next
-                    <ng-pluralize count="maxHours" when="{'one': 'hour.', 'other': '{} hours.'}"></ng-pluralize>
+                    from {{scheduleDepStation}} to {{scheduleDestStation}} in the next
+                    <ng-pluralize count="scheduleMaxHours" when="{'one': 'hour.', 'other': '{} hours.'}"></ng-pluralize>
                 </div>
             </div>
         </div>

@@ -25,6 +25,7 @@
  * Initializes the variables
  */
     $scope.init = function() {
+        $scope.scheduleAvailable = false;
         $scope.schedules = [];
         $scope.maxHours = 2;
     };
@@ -33,6 +34,9 @@
  * Gets the schedule from departure station to destination station for the next maxHours
  */
     $scope.getSchedule = function() {
+        $scope.scheduleAvailable = false;
+        $scope.schedules = [];
+        $scope.scheduleCount = 0;
         if ($scope.depStation && $scope.destStation)
             $scope.getTripsByStation($scope.depStation, $scope.destStation, $scope.maxHours);
     };
@@ -104,7 +108,7 @@
      */
     $scope.displaySchedules = function(schedules, depStation, destStation, maxHours) {
 
-        //console.log('from displaySchedules in app.js..',schedules );
+        console.log('from displaySchedules in app.js..',schedules );
         schedules.forEach(function(schedule) {
             var foundStart = false,
                 foundStop = false;
@@ -148,7 +152,11 @@
             }
         });
         $scope.$apply(function() {
+            $scope.scheduleDepStation = $scope.depStation;
+            $scope.scheduleDestStation = $scope.destStation;
+            $scope.scheduleMaxHours = $scope.maxHours;
             $scope.scheduleCount = $scope.schedules.length;
+            $scope.scheduleAvailable = true;
         });
     };
 
