@@ -144,7 +144,9 @@ self._processCalendarData = function(gtfsData) {
  */
 self.addEventListener('install', function(event) {
     event.waitUntil(
-        caches.open(staticCacheName).then(function(cache) {
+        caches.open(staticCacheName)
+        .then(function(cache) {
+            console.log('Adding cache');
             return cache.addAll([
                 '/',
                 'js/all.js',
@@ -155,43 +157,40 @@ self.addEventListener('install', function(event) {
                 'data/calendar_cr.txt'
             ]);
         })
+        .then(function() {
+            return Promise.all ([
+            //get the gtfs -stop_times_cr data, and then store it to indexdb
+            caches.match('data/stop_times_cr.txt')
+            .then(function(response) {
+                return response.text();
+            }).then(function(text) {
+                return self._processStopTimesData(text);
+            }).catch(function(error) {
+                console.log('Error storing stop times data to IndexedDb', error);
+            }),
+
+        //get the gtfs -trips_cr data, and store it to indexdb
+            caches.match('data/trips_cr.txt')
+            .then(function(response) {
+                return response.text();
+            }).then(function(text) {
+                return self._processTripsData(text);
+            }).catch(function(error) {
+                console.log('Error storing trips data to IndexedDb', error);
+            }),
+
+        //get the gtfs -calendar_cr data, and store it to indexdb
+            caches.match('data/calendar_cr.txt')
+            .then(function(response) {
+                return response.text();
+            }).then(function(text) {
+                return self._processCalendarData(text);
+            }).catch(function(error) {
+                console.log('Error storing calendar data to IndexedDb', error);
+            })
+        ])})
     );
 
-    //get the gtfs -stop_times_cr data, and then store it to indexdb
-    event.waitUntil(
-        caches.match('data/stop_times_cr.txt')
-        .then(function(response) {
-            return response.text();
-        }).then(function(text) {
-            return self._processStopTimesData(text);
-        }).catch(function(error) {
-            console.log('Error storing stop times data to IndexedDb', error);
-        })
-    );
-
-    //get the gtfs -trips_cr data, and store it to indexdb
-    event.waitUntil(
-        caches.match('data/trips_cr.txt')
-        .then(function(response) {
-            return response.text();
-        }).then(function(text) {
-            return self._processTripsData(text);
-        }).catch(function(error) {
-            console.log('Error storing trips data to IndexedDb', error);
-        })
-    );
-
-    //get the gtfs -calendar_cr data, and store it to indexdb
-    event.waitUntil(
-        caches.match('data/calendar_cr.txt')
-        .then(function(response) {
-            return response.text();
-        }).then(function(text) {
-            return self._processCalendarData(text);
-        }).catch(function(error) {
-            console.log('Error storing calendar data to IndexedDb', error);
-        })
-    );
     //TODO: add stop.txt data.
 
 });
