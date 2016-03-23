@@ -11,6 +11,7 @@ var dbPromise = idb.open('mbta', 1, function(upgradeDb) {
             var stopTimeStore = upgradeDb.createObjectStore('stoptimes', {
                 keyPath: ['tripName', 'stopOrder']
             });
+            //this will help get the trip names for the stop.
             stopTimeStore.createIndex('stoptime', ['stopName', 'arrival']);
             //this will help get the stoptimes by tripname
             stopTimeStore.createIndex('tripName', 'tripName');
@@ -214,15 +215,15 @@ self.addEventListener('activate', function(event) {
 });
 
 /**
- * Gets the parameter from the url search string
+ * Gets the parameter from the url search string.
  */
 self._getSearchParam = function(searchString, param) {
     var loc = searchString.indexOf(param + '=') + param.length + 1;
     var nextloc = searchString.indexOf('&', loc);
     if (nextloc > -1) {
-        return searchString.substr(loc, nextloc - loc);
+        return decodeURIComponent(searchString.substr(loc, nextloc - loc));
     } else
-        return searchString.substr(loc);
+        return decodeURIComponent(searchString.substr(loc));
 };
 
 /**
