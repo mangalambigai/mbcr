@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html ng-app="mbta">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrapcerulean.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>MBTA Commuter Rail</title>
+    <script src="js/lib/angular.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid" ng-controller="ScheduleController" ng-init="init()">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>MBTA Commuter Rail Schedule</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-inline" name="trainForm">
+                    <div class="form-group">
+                        <label for="departure">Where will you start from? *</label>
+                        <input id="departure" name="departure" list="stations" type="text" class="form-control" placeholder="Departure Station" autofocus required ng-model="depStation">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="arrival">Where do you want to go? *</label>
+                        <input id="arrival" name="arrival" list="stations" type="text" class="form-control" placeholder="Destination Station" required ng-model="destStation">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="maxtime">How many hours of schedule do you want to see?</label>
+                        <input id="maxtime" type="number" min="1" max="10" step="1" ng-model="maxHours"></input>
+                    </div>
+
+                    <datalist id="stations">
+                        <option value="South Station" />
+                        <option value="Back Bay" />
+                        <option value="Ruggles" />
+                        <option value="Hyde Park" />
+                        <option value="Route 128" />
+                        <option value="Canton Junction" />
+                        <option value="Canton Center" />
+                        <option value="Stoughton" />
+                        <option value="Sharon" />
+                        <option value="Mansfield" />
+                        <option value="Attleboro" />
+                        <option value="South Attleboro" />
+                        <option value="Providence" />
+                    </datalist>
+
+                    <button type="button" class="btn btn-primary" ng-click="getSchedule()">Get Schedule</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-show="scheduleAvailable" class="alert alert-success" id="resultCount">
+                    <ng-pluralize count="scheduleCount"
+                                     when="{'0': 'There are no trains',
+                                         'one': 'There is 1 train',
+                                         'other': 'There are {} trains'}">
+                    </ng-pluralize>
+                    from {{scheduleDepStation}} to {{scheduleDestStation}} in the next
+                    <ng-pluralize count="scheduleMaxHours" when="{'one': 'hour.', 'other': '{} hours.'}"></ng-pluralize>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="schedule in schedules">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                        {{schedule.route_name}} {{schedule.trip_name}} {{schedule.direction_name}}
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover table-striped table-condensed">
+                            <tr><th>Stop</th><th>Arrival</th><th>Departure</th></tr>
+                            <tbody>
+                                <tr ng-repeat="stop in schedule.stops">
+                                    <td>{{stop.stop_name}}</td>
+                                    <td>{{stop.sch_arr_dt}}</td>
+                                    <td>{{stop.sch_dep_dt}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-controller="ServiceController" ng-init="init()">
+        <div class="alert alert-dismissible alert-info" ng-show="newUpdateReady">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>Newer version available! </strong>
+          <button ng-click="update()">Reload</button>
+        </div>
+    </div>
+
+    <script src="js/all.js"></script>
+
+</body>
+
+</html>
