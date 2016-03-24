@@ -47,7 +47,7 @@
     $scope.getTripsByStation = function(depStation, destStation, maxHours) {
         //Fetch all the trips from depStation for the next maxHours
         fetch(
-            'https://realtime.mbta.com/developer/api/v2/schedulebystop?api_key=xGeHtAQ3kk2mYyhD4fO8rw&stop=' +
+            'https://mbta-cr.appspot.com/schedulebystop?&stop=' +
             depStation + '&max_time=' + maxHours * 60, {
                 method: 'GET'
             }).then(function(response) {
@@ -94,8 +94,8 @@
      * Gets the schedule for a particular trip
      */
     $scope.getScheduleByTrip = function(trip) {
-        return fetch('https://realtime.mbta.com/developer/api/v2/schedulebytrip?' +
-            'api_key=xGeHtAQ3kk2mYyhD4fO8rw&trip=' + trip, {
+        return fetch('https://mbta-cr.appspot.com/schedulebytrip?' +
+            'trip=' + trip, {
                 method: 'GET'
             }).then(function(response) {
             return response.json();
@@ -178,7 +178,7 @@
         $scope.newversion = false;
         if (!navigator.serviceWorker) return;
 
-        navigator.serviceWorker.register('/mbcr/sw.js').then(function(reg) {
+        navigator.serviceWorker.register('../sw.js').then(function(reg) {
             if (!navigator.serviceWorker.controller) {
                 return;
             }
