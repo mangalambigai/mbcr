@@ -178,6 +178,8 @@
         $scope.newversion = false;
         if (!navigator.serviceWorker) return;
 
+        console.log('pathname' + window.location.pathname);
+
         navigator.serviceWorker.register('/mbcr/sw.js').then(function(reg) {
             if (!navigator.serviceWorker.controller) {
                 return;
