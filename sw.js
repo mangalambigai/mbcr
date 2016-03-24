@@ -149,10 +149,11 @@ self.addEventListener('install', function(event) {
         .then(function(cache) {
             console.log('Adding cache');
             return cache.addAll([
-                '/',
+                'index.html',
                 'js/all.js',
                 'js/lib/angular.min.js',
                 'css/bootstrapcerulean.css',
+                'css/styles.css',
                 'data/stop_times_cr.txt',
                 'data/trips_cr.txt',
                 'data/calendar_cr.txt'
@@ -215,7 +216,7 @@ self.addEventListener('activate', function(event) {
 });
 
 /**
- * Gets the parameter from the url search string.
+ * Gets the parameter from the url search string
  */
 self._getSearchParam = function(searchString, param) {
     var loc = searchString.indexOf(param + '=') + param.length + 1;
@@ -245,10 +246,13 @@ self.addEventListener('fetch', function(event) {
             if( requestUrl.pathname === '/developer/api/v2/schedulebystop') {
 
                 event.respondWith(
-                    fetch(event.request).then( function(response){
+                    //We can't fetch as MBTA API doesnt support https
+/*                    fetch(event.request).then( function(response){
                         return response;
                     }).catch(function(error) {
                         return self._getTripIds(requestUrl)
+                        */
+                    self._getTripIds(requestUrl)
                         .then(self._filterTripByDay)
                         .then(function(response) {
                             console.log('in _getTripIds response', response);
@@ -262,16 +266,20 @@ self.addEventListener('fetch', function(event) {
                                 fromIDB: true,
                                 error: error
                             }));
-                        });
+                        })
 
-                    })
+                    //})
                 );
             } else if (requestUrl.pathname === '/developer/api/v2/schedulebytrip') {
                 event.respondWith(
+                    //We can't fetch as MBTA API doesnt support https
+                    /*
                     fetch(event.request).then( function(response){
                         return response;
                     }).catch(function(error) {
-                        return self._getScheduleByTrip(requestUrl)
+                        return
+                        */
+                        self._getScheduleByTrip(requestUrl)
                         .then(function(response) {
                             console.log('from sw.js', response);
                             return new Response(
@@ -279,7 +287,7 @@ self.addEventListener('fetch', function(event) {
                                 {'Content-Type': 'application/json'}
                             );
                         })
-                    })
+                    //})
                 );
             }
 
