@@ -47,7 +47,7 @@
     $scope.getTripsByStation = function(depStation, destStation, maxHours) {
         //Fetch all the trips from depStation for the next maxHours
         fetch(
-            'http://realtime.mbta.com/developer/api/v2/schedulebystop?api_key=xGeHtAQ3kk2mYyhD4fO8rw&stop=' +
+            'https://realtime.mbta.com/developer/api/v2/schedulebystop?api_key=xGeHtAQ3kk2mYyhD4fO8rw&stop=' +
             depStation + '&max_time=' + maxHours * 60, {
                 method: 'GET'
             }).then(function(response) {
@@ -94,7 +94,7 @@
      * Gets the schedule for a particular trip
      */
     $scope.getScheduleByTrip = function(trip) {
-        return fetch('http://realtime.mbta.com/developer/api/v2/schedulebytrip?' +
+        return fetch('https://realtime.mbta.com/developer/api/v2/schedulebytrip?' +
             'api_key=xGeHtAQ3kk2mYyhD4fO8rw&trip=' + trip, {
                 method: 'GET'
             }).then(function(response) {
