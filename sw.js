@@ -449,7 +449,7 @@ self._processCalendarData = function (gtfsData) {
 self.addEventListener('install', function (event) {
     event.waitUntil(caches.open(staticCacheName).then(function (cache) {
         console.log('Adding cache');
-        return cache.addAll(['/', 'js/all.js', 'js/lib/angular.min.js', 'css/bootstrapcerulean.css', 'data/stop_times_cr.txt', 'data/trips_cr.txt', 'data/calendar_cr.txt']);
+        return cache.addAll(['js/all.js', 'js/lib/angular.min.js', 'css/bootstrapcerulean.css', 'data/stop_times_cr.txt', 'data/trips_cr.txt', 'data/calendar_cr.txt']);
     }).then(function () {
         return Promise.all([
         //get the gtfs -stop_times_cr data, and then store it to indexdb
