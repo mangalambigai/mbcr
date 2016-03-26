@@ -35,6 +35,7 @@
  */
     $scope.getSchedule = function() {
         $scope.scheduleAvailable = false;
+        $scope.error = '';
         $scope.schedules = [];
         $scope.scheduleCount = 0;
         if ($scope.depStation && $scope.destStation)
@@ -46,15 +47,33 @@
  */
     $scope.getTripsByStation = function(depStation, destStation, maxHours) {
         //Fetch all the trips from depStation for the next maxHours
-        fetch(
-            'https://mbta-cr.appspot.com/schedulebystop?&stop=' +
+        fetch( 'https://mbta-cr.appspot.com/schedulebystop?&stop=' +
             depStation + '&max_time=' + maxHours * 60, {
                 method: 'GET'
-            }).then(function(response) {
-            return response.json();
+        }).then(function(response) {
+            if (response.status == 200)
+                return response.json();
+            else
+            {
+                console.log('received status code '+response.status);
+//404 means station not found
+                $scope.$apply(function() {
+                    if (response.status == 404)
+                    {
+                        $scope.error = 'Cannot find this station. Please check the spelling.';
+                    }
+                    else
+                    {
+                        $scope.error = 'Received error code '+response.status + ' from the server';
+                    }
+                });
+            }
         }).catch(function(error) {
             console.log(error);
         }).then(function(trips) {
+
+            if (!trips)
+                return;
             var tripids = [];
             if (trips.fromIDB)
             {
@@ -116,13 +135,13 @@
 
             angular.forEach(schedule.stop, function(stop) {
 
-                if (stop.stop_name === depStation)
+                if (stop.stop_name.toUpperCase() === depStation.toUpperCase())
                     foundStart = true;
 
                 //only display the stations between starting and destination
                 if (foundStart && !foundStop) {
 
-                    if (stop.stop_name === destStation)
+                    if (stop.stop_name.toUpperCase() === destStation.toUpperCase())
                         foundStop = true;
 
                     var arrTime = new Date(0);
@@ -149,6 +168,15 @@
                         stops: stops
                     });
                 });
+
+                //send a message to service worker to cache the route
+                if (navigator.serviceWorker.controller) {
+                    navigator.serviceWorker.controller.postMessage({
+                        action: 'cacheRoute',
+                        route_id: schedule.route_id
+                    });
+                }
+
             }
         });
         $scope.$apply(function() {
@@ -178,9 +206,11 @@
         $scope.newversion = false;
         if (!navigator.serviceWorker) return;
 
-        console.log('pathname' + window.location.pathname);
+        var swpath=window.location.pathname+'sw.js';
 
-        navigator.serviceWorker.register('/mbcr/sw.js').then(function(reg) {
+        console.log('pathname: ' + swpath);
+
+        navigator.serviceWorker.register(swpath).then(function(reg) {
             if (!navigator.serviceWorker.controller) {
                 return;
             }

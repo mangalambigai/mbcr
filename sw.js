@@ -315,7 +315,7 @@ var staticCacheName = 'mbta-static-v1';
 /**
  * Install the database
  */
-var dbPromise = _idb2.default.open('mbta', 1, function (upgradeDb) {
+var dbPromise = _idb2.default.open('mbta', 2, function (upgradeDb) {
     switch (upgradeDb.oldVersion) {
         case 0:
             var stopTimeStore = upgradeDb.createObjectStore('stoptimes', {
@@ -332,8 +332,44 @@ var dbPromise = _idb2.default.open('mbta', 1, function (upgradeDb) {
             var calendarStore = upgradeDb.createObjectStore('calendar', {
                 keyPath: 'serviceId'
             });
+        case 1:
+            var routeFileStore = upgradeDb.createObjectStore('routefiles', {
+                keyPath: 'routeName'
+            });
     }
 });
+/**
+ * Load the data from stop_times_cr.txt to indexedDB
+ */
+self._processRouteFilesData = function (gtfsData) {
+
+    dbPromise.then(function (db) {
+        var allTextLines = gtfsData.split(/\r\n|\n/);
+
+        var tx = db.transaction('routefiles', 'readwrite');
+        var routeFileStore = tx.objectStore('routefiles');
+
+        allTextLines.forEach(function (line) {
+            if (line.trim().length > 0) {
+                var entries = line.split(',');
+                var routename = entries[0].replace(/['"]+/g, '');
+                var filename = entries[1].replace(/['"]+/g, '');
+
+                //add the entry to indexDB stoptimes store
+                routeFileStore.put({
+                    routeName: routename,
+                    fileName: filename,
+                    loadedInDB: false
+                });
+            }
+        });
+        return tx.complete;
+    }).then(function () {
+        console.log('added entries to indexDB stopTimes');
+    }).catch(function (error) {
+        console.log(error);
+    });
+};
 
 /**
  * Load the data from stop_times_cr.txt to indexedDB
@@ -411,6 +447,44 @@ self._processTripsData = function (gtfsData) {
 };
 
 /**
+ * Cache this route
+ */
+self._cacheRoute = function (route_id) {
+    //find the route in the table
+    dbPromise.then(function (db) {
+        var tx = db.transaction('routefiles');
+        var routeFileStore = tx.objectStore('routefiles');
+        return routeFileStore.get(route_id);
+    }).then(function (routedata) {
+        if (!routedata.loadedInDB) {
+            console.log('will cache ', routedata.fileName);
+            return caches.match('data/' + routedata.fileName);
+        }
+    }).then(function (cachedFile) {
+        if (cachedFile) {
+
+            return cachedFile.text();
+        }
+    }).then(function (text) {
+        if (text) {
+            console.log('calling _processStopTimesData');
+            return self._processStopTimesData(text);
+        } else return 'not updated';
+    }).then(function (param) {
+        if (param !== 'not updated')
+            //update the routefilestore flag for the route.
+            return dbPromise.then(function (db) {
+                var wtx = db.transaction('routefiles', 'readwrite');
+                var routeFileStore = wtx.objectStore('routefiles');
+                routeFileStore.put({ routeName: route_id, loadedInDB: true });
+                return wtx.complete;
+            });
+    }).catch(function (error) {
+        console.log('Error storing ' + route_id + ' stop times data to IndexedDb', error);
+    });
+    console.log('route_id in _cacheRoute', route_id);
+};
+/**
  * Load the data from calendar_cr.txt to indexedDB
  */
 self._processCalendarData = function (gtfsData) {
@@ -449,14 +523,29 @@ self._processCalendarData = function (gtfsData) {
 self.addEventListener('install', function (event) {
     event.waitUntil(caches.open(staticCacheName).then(function (cache) {
         console.log('Adding cache');
-        return cache.addAll(['index.html', 'js/all.js', 'js/lib/angular.min.js', 'css/bootstrapcerulean.css', 'css/styles.css', 'data/stop_times_cr.txt', 'data/trips_cr.txt', 'data/calendar_cr.txt']);
+        //non critical
+        cache.addAll(['data/stop_times_fairmont.txt', 'data/stop_times_fitchburg.txt', 'data/stop_times_franklin.txt', 'data/stop_times_greenbush.txt', 'data/stop_times_haverhill.txt', 'data/stop_times_kingston.txt', 'data/stop_times_lowell.txt', 'data/stop_times_middleborough.txt', 'data/stop_times_needham.txt', 'data/stop_times_newburyport.txt', 'data/stop_times_providence.txt', 'data/stop_times_worcester.txt']);
+        //critical
+        return cache.addAll(['index.html', 'js/all.js', 'favicon.ico', 'js/lib/angular.min.js', 'css/bootstrapcerulean.css', 'css/styles.css', 'data/route_files.txt', 'data/trips_cr.txt', 'data/calendar_cr.txt']);
     }).then(function () {
+        console.log('added cache');
         return Promise.all([
-        //get the gtfs -stop_times_cr data, and then store it to indexdb
-        caches.match('data/stop_times_cr.txt').then(function (response) {
+
+        /*            //get the gtfs -stop_times_cr data, and then store it to indexdb
+                    caches.match('data/stop_times_cr.txt')
+                    .then(function(response) {
+                        return response.text();
+                    }).then(function(text) {
+                        return self._processStopTimesData(text);
+                    }).catch(function(error) {
+                        console.log('Error storing stop times data to IndexedDb', error);
+                    }),
+        */
+        //get the file mapping routes and stoptimes files, and then store it to indexeddb
+        caches.match('data/route_files.txt').then(function (response) {
             return response.text();
         }).then(function (text) {
-            return self._processStopTimesData(text);
+            return self._processRouteFilesData(text);
         }).catch(function (error) {
             console.log('Error storing stop times data to IndexedDb', error);
         }),
@@ -470,7 +559,7 @@ self.addEventListener('install', function (event) {
             console.log('Error storing trips data to IndexedDb', error);
         }),
 
-        //get the gtfs -calendar_cr data, and store it to indexdb
+        //get the gtfs calendar_cr data, and store it to indexdb
         caches.match('data/calendar_cr.txt').then(function (response) {
             return response.text();
         }).then(function (text) {
@@ -479,8 +568,6 @@ self.addEventListener('install', function (event) {
             console.log('Error storing calendar data to IndexedDb', error);
         })]);
     }));
-
-    //TODO: add stop.txt data.
 });
 
 /**
@@ -524,8 +611,23 @@ self.addEventListener('fetch', function (event) {
             if (requestUrl.pathname === '/schedulebystop') {
 
                 event.respondWith(fetch(event.request).then(function (response) {
+                    /*
+                    //This would be a very good spot to clone response and
+                    //cache the route, but we have to find out
+                    //if the destination station falls in that route.
+                    //Since too many routes run thru some stations (Like South station)
+                    //we dont want to cache all routes for starting station.
+                      var responsecopy = response.clone();
+                    responsecopy.json().then(function(json) {
+                        console.log(json);
+                    });
+                    //var route_id = self._getRouteId(responsecopy);
+                    //cache that route
+                    //self._cacheRoute(route_id);
+                    */
                     return response;
                 }).catch(function (error) {
+                    console.log(error);
                     return self._getTripIds(requestUrl).then(self._filterTripByDay).then(function (response) {
                         console.log('in _getTripIds response', response);
                         return new Response(JSON.stringify({
@@ -677,11 +779,14 @@ self._getScheduleByTrip = function (requestUrl) {
     });
 };
 /**
- * Responds to skipWaiting messages from controller
+ * Responds to messages from controller
  */
 self.addEventListener('message', function (event) {
     if (event.data.action === 'skipWaiting') {
         self.skipWaiting();
+    }
+    if (event.data.action === 'cacheRoute') {
+        self._cacheRoute(event.data.route_id);
     }
 });
 
