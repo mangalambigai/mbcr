@@ -167,6 +167,15 @@
                         stops: stops
                     });
                 });
+
+                //send a message to service worker to cache the route
+                if (navigator.serviceWorker.controller) {
+                    navigator.serviceWorker.controller.postMessage({
+                        action: 'cacheRoute',
+                        route_id: schedule.route_id
+                    });
+                }
+
             }
         });
         $scope.$apply(function() {
