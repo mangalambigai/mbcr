@@ -35,6 +35,7 @@
  */
     $scope.getSchedule = function() {
         $scope.scheduleAvailable = false;
+        $scope.error = '';
         $scope.schedules = [];
         $scope.scheduleCount = 0;
         if ($scope.depStation && $scope.destStation)
