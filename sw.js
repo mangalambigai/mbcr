@@ -151,6 +151,7 @@ self.addEventListener('install', function(event) {
             return cache.addAll([
                 'index.html',
                 'js/all.js',
+                'favicon.ico',
                 'js/lib/angular.min.js',
                 'css/bootstrapcerulean.css',
                 'css/styles.css',
@@ -160,6 +161,7 @@ self.addEventListener('install', function(event) {
             ]);
         })
         .then(function() {
+            console.log('added cache');
             return Promise.all ([
             //get the gtfs -stop_times_cr data, and then store it to indexdb
             caches.match('data/stop_times_cr.txt')
@@ -181,7 +183,7 @@ self.addEventListener('install', function(event) {
                 console.log('Error storing trips data to IndexedDb', error);
             }),
 
-        //get the gtfs -calendar_cr data, and store it to indexdb
+        //get the gtfs calendar_cr data, and store it to indexdb
             caches.match('data/calendar_cr.txt')
             .then(function(response) {
                 return response.text();
@@ -242,17 +244,16 @@ self.addEventListener('fetch', function(event) {
         );
     } else {
         //this is a schedule request, try to get from indexDB and also realtime
-        if (requestUrl.hostname === 'realtime.mbta.com') {
-            if( requestUrl.pathname === '/developer/api/v2/schedulebystop') {
+        if (requestUrl.hostname === 'mbta-cr.appspot.com') {
+            if( requestUrl.pathname === '/schedulebystop') {
 
                 event.respondWith(
-                    //We can't fetch as MBTA API doesnt support https
-/*                    fetch(event.request).then( function(response){
+                    fetch(event.request).then( function(response){
+                        //todo: response.clone() and extract the routeid here
                         return response;
                     }).catch(function(error) {
+                        console.log(error);
                         return self._getTripIds(requestUrl)
-                        */
-                    self._getTripIds(requestUrl)
                         .then(self._filterTripByDay)
                         .then(function(response) {
                             console.log('in _getTripIds response', response);
@@ -266,28 +267,24 @@ self.addEventListener('fetch', function(event) {
                                 fromIDB: true,
                                 error: error
                             }));
-                        })
+                        });
 
-                    //})
+                    })
                 );
-            } else if (requestUrl.pathname === '/developer/api/v2/schedulebytrip') {
+            } else if (requestUrl.pathname === '/schedulebytrip') {
                 event.respondWith(
-                    //We can't fetch as MBTA API doesnt support https
-                    /*
                     fetch(event.request).then( function(response){
                         return response;
                     }).catch(function(error) {
-                        return
-                        */
-                        self._getScheduleByTrip(requestUrl)
+                        return self._getScheduleByTrip(requestUrl)
                         .then(function(response) {
                             console.log('from sw.js', response);
                             return new Response(
                                 JSON.stringify( response ),
                                 {'Content-Type': 'application/json'}
                             );
-                        })
-                    //})
+                        });
+                    })
                 );
             }
 

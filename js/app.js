@@ -46,15 +46,33 @@
  */
     $scope.getTripsByStation = function(depStation, destStation, maxHours) {
         //Fetch all the trips from depStation for the next maxHours
-        fetch(
-            'https://realtime.mbta.com/developer/api/v2/schedulebystop?api_key=xGeHtAQ3kk2mYyhD4fO8rw&stop=' +
+        fetch( 'https://mbta-cr.appspot.com/schedulebystop?&stop=' +
             depStation + '&max_time=' + maxHours * 60, {
                 method: 'GET'
-            }).then(function(response) {
-            return response.json();
+        }).then(function(response) {
+            if (response.status == 200)
+                return response.json();
+            else
+            {
+                console.log('received status code '+response.status);
+//404 means station not found
+                $scope.$apply(function() {
+                    if (response.status == 404)
+                    {
+                        $scope.error = 'Cannot find this station. Please check the spelling.';
+                    }
+                    else
+                    {
+                        $scope.error = 'Received error code '+response.status + ' from the server';
+                    }
+                });
+            }
         }).catch(function(error) {
             console.log(error);
         }).then(function(trips) {
+
+            if (!trips)
+                return;
             var tripids = [];
             if (trips.fromIDB)
             {
@@ -94,8 +112,8 @@
      * Gets the schedule for a particular trip
      */
     $scope.getScheduleByTrip = function(trip) {
-        return fetch('https://realtime.mbta.com/developer/api/v2/schedulebytrip?' +
-            'api_key=xGeHtAQ3kk2mYyhD4fO8rw&trip=' + trip, {
+        return fetch('https://mbta-cr.appspot.com/schedulebytrip?' +
+            'trip=' + trip, {
                 method: 'GET'
             }).then(function(response) {
             return response.json();
@@ -116,13 +134,13 @@
 
             angular.forEach(schedule.stop, function(stop) {
 
-                if (stop.stop_name === depStation)
+                if (stop.stop_name.toUpperCase() === depStation.toUpperCase())
                     foundStart = true;
 
                 //only display the stations between starting and destination
                 if (foundStart && !foundStop) {
 
-                    if (stop.stop_name === destStation)
+                    if (stop.stop_name.toUpperCase() === destStation.toUpperCase())
                         foundStop = true;
 
                     var arrTime = new Date(0);
@@ -178,7 +196,11 @@
         $scope.newversion = false;
         if (!navigator.serviceWorker) return;
 
-        navigator.serviceWorker.register('../sw.js').then(function(reg) {
+        var swpath=window.location.pathname+'sw.js';
+
+        console.log('pathname: ' + swpath);
+
+        navigator.serviceWorker.register(swpath).then(function(reg) {
             if (!navigator.serviceWorker.controller) {
                 return;
             }
