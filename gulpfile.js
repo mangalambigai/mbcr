@@ -10,7 +10,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 
-gulp.task('default', ['copy-html', 'copy-txt', 'styles', 'lint', 'scripts'],
+gulp.task('default', ['copy-html', 'copy-txt', 'copy-ico', 'styles', 'lint', 'scripts'],
     function () {
         gulp.watch('js/*.js', ['lint', 'scripts']);
         gulp.watch('sw.js', ['lint', 'scripts']);
@@ -81,6 +81,11 @@ gulp.task('copy-html', function () {
 gulp.task('copy-txt', function () {
     gulp.src('data/*.txt')
         .pipe(gulp.dest('dist/data'));
+});
+
+gulp.task('copy-ico', function () {
+    gulp.src('./favicon.ico')
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('styles', function () {
