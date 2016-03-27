@@ -144,6 +144,7 @@
                     if (stop.stop_name.toUpperCase() === destStation.toUpperCase())
                         foundStop = true;
 
+                    //MBTA API responds in seconds since 1970 Jan 1.
                     var arrTime = new Date(0);
                     arrTime.setUTCSeconds(stop.sch_arr_dt);
 

@@ -299,7 +299,6 @@ self.addEventListener('install', function(event) {
             })
         ])})
     );
-    //TODO: add stop.txt data.
 
 });
 
