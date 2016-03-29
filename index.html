@@ -82,12 +82,25 @@
                     </div>
                     <div class="panel-body">
                         <table class="table table-hover table-striped table-condensed">
-                            <tr><th>Stop</th><th>Arrival</th><th>Departure</th></tr>
+                            <tr><th>Stop</th><th>Arrival</th><th>Departure</th><th>Prediction<th></tr>
                             <tbody>
                                 <tr ng-repeat="stop in schedule.stops">
                                     <td>{{stop.stop_name}}</td>
                                     <td>{{stop.sch_arr_dt}}</td>
-                                    <td>{{stop.sch_dep_dt}}</td>
+                                    <td ng-class="{'strike': stop.prediction && stop.prediction != stop.sch_dep_dt}">{{stop.sch_dep_dt}}</td>
+                                    <td>
+                                        <span ng-show="!stop.prediction">
+                                        No data
+                                        </span>
+
+                                        <span ng-show="stop.prediction === stop.sch_dep_dt" aria-hidden="true">On time</span>
+
+                                        <span ng-show="stop.prediction != stop.sch_dep_dt">
+                                            {{stop.prediction}}
+                                        </span>
+
+                                    </td>
+
                                 </tr>
                             </tbody>
                         </table>
