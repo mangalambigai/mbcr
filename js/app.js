@@ -219,8 +219,6 @@
      * Adds the prediction response to the displayed schedule.
      */
     $scope.displayPredictions = function(response) {
-///We only get predictions for trips in next one hour.
-///This data is not available for other trips.
         if (!response)
             return;
         console.log('displayPredictions', response);
@@ -228,23 +226,30 @@
         //response has a list of trips' predictions
         response.forEach(function(trip){
 
-            //find the trip in schedules
-            var scheduleTrip = $scope.schedules.find(function (s_trip) {
-                return s_trip.trip_id === trip.trip_id;
-            });
+            ///We only get predictions for trips in next one hour.
+            ///This data is not available for other trips.
+            if (trip) {
 
-            if (scheduleTrip)
-            {
-                trip.stop.forEach(function(predictionStop){
-                    var schedulestop = scheduleTrip.stops.find(function(s_stop) {
-                        return s_stop.stop_name === predictionStop.stop_name;
-                    });
-                    //schedule only has the stops between the 2 stations.
-                    //prediction has stops before departure and beyond destination.
-                    if (schedulestop )
-                        schedulestop.prediction = predictionStop.pre_dt;
+                //find the trip in schedules
+                var scheduleTrip = $scope.schedules.find(function (s_trip) {
+                    return s_trip.trip_id === trip.trip_id;
                 });
 
+                if (scheduleTrip) {
+                    trip.stop.forEach(function(predictionStop) {
+                        var schedulestop = scheduleTrip.stops.find(function(s_stop) {
+                            return s_stop.stop_name === predictionStop.stop_name;
+                        });
+                        //schedule only has the stops between the 2 stations.
+                        //prediction has stops before departure and beyond destination.
+                        if (schedulestop ){
+                            var predTime = new Date(0);
+                            predTime.setUTCSeconds(predictionStop.pre_dt);
+                            schedulestop.prediction = predTime.toLocaleTimeString();
+                        }
+                    });
+
+                }
             }
         });
     };
