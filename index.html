@@ -79,9 +79,10 @@
                         <div class="panel-title">
                         {{schedule.route_name}}
                         <span ng-show="!schedule.route_name">{{schedule.route_id}}</span>
+                        <br>
                         {{schedule.trip_name}}
                         <span ng-show="!schedule.trip_name">{{schedule.trip_id}}</span>
-                        {{schedule.direction_name}}
+                        <br>Duration: {{schedule.trip_duration}}
                         </div>
                     </div>
                     <div class="panel-body">

@@ -146,6 +146,21 @@
     };
 
     /**
+     * from http://stackoverflow.com/questions/6312993/javascript-seconds-to-time-string-with-format-hhmmss
+     */
+    $scope.toHHMMSS = function (sec_num) {
+        var hours   = Math.floor(sec_num / 3600);
+        var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+        var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+        if (hours   < 10) {hours   = "0"+hours;}
+        if (minutes < 10) {minutes = "0"+minutes;}
+        if (seconds < 10) {seconds = "0"+seconds;}
+        var time    = hours+':'+minutes+':'+seconds;
+        return time;
+    }
+
+    /**
      * Displays the stop names, arrival and departure times
      * for the trips that go from departure to destination station
      */
@@ -156,17 +171,22 @@
             var foundStart = false,
                 foundStop = false;
             var stops = [];
+            var startTime, stopTime;
 
             angular.forEach(schedule.stop, function(stop) {
 
-                if (stop.stop_name.toUpperCase() === depStation.toUpperCase())
+                if (stop.stop_name.toUpperCase() === depStation.toUpperCase()) {
                     foundStart = true;
+                    startTime = stop.sch_dep_dt;
+                }
 
                 //only display the stations between starting and destination
                 if (foundStart && !foundStop) {
 
-                    if (stop.stop_name.toUpperCase() === destStation.toUpperCase())
+                    if (stop.stop_name.toUpperCase() === destStation.toUpperCase()) {
                         foundStop = true;
+                        stopTime = stop.sch_arr_dt;
+                    }
 
                     //MBTA API responds in seconds since 1970 Jan 1.
                     var arrTime = new Date(0);
@@ -185,6 +205,8 @@
 
             //Display the trip only if it goes to the destination station
             if (foundStop) {
+                var duration = stopTime - startTime;
+                var duration_formatted = $scope.toHHMMSS(duration);
                 $scope.$apply(function() {
                     $scope.schedules.push({
                         route_name: schedule.route_name,
@@ -192,7 +214,8 @@
                         trip_id: schedule.trip_id,
                         route_id: schedule.route_id,
                         direction_name: schedule.direction_name,
-                        stops: stops
+                        stops: stops,
+                        trip_duration: duration_formatted
                     });
                 });
 
