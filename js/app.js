@@ -105,7 +105,18 @@
             })
             .catch(function(error) {
                 console.log(error);
+            }).then(function() {
+
+                //get the realtime prediction for the trips,
+                return Promise.all($scope.schedules.map($scope.getPredictionsByTrip))
+            }).then(function(response) {
+                $scope.$apply(function(){
+                    $scope.displayPredictions(response);
+                });
             });
+
+
+
         });
     };
 
@@ -118,6 +129,19 @@
                 method: 'GET'
             }).then(function(response) {
             return response.json();
+        });
+    };
+
+    /**
+     * Gets the prediction for a particular trip
+     */
+    $scope.getPredictionsByTrip = function(schedule) {
+        return fetch('https://mbta-cr.appspot.com/predictionsbytrip?trip='
+            + schedule.trip_id, {
+                method: 'GET'
+        }).then(function(response) {
+            if (response.status==200)
+                return response.json();
         });
     };
 
@@ -165,6 +189,8 @@
                     $scope.schedules.push({
                         route_name: schedule.route_name,
                         trip_name: schedule.trip_name,
+                        trip_id: schedule.trip_id,
+                        route_id: schedule.route_id,
                         direction_name: schedule.direction_name,
                         stops: stops
                     });
@@ -186,6 +212,40 @@
             $scope.scheduleMaxHours = $scope.maxHours;
             $scope.scheduleCount = $scope.schedules.length;
             $scope.scheduleAvailable = true;
+        });
+    };
+
+    /**
+     * Adds the prediction response to the displayed schedule.
+     */
+    $scope.displayPredictions = function(response) {
+///We only get predictions for trips in next one hour.
+///This data is not available for other trips.
+        if (!response)
+            return;
+        console.log('displayPredictions', response);
+
+        //response has a list of trips' predictions
+        response.forEach(function(trip){
+
+            //find the trip in schedules
+            var scheduleTrip = $scope.schedules.find(function (s_trip) {
+                return s_trip.trip_id === trip.trip_id;
+            });
+
+            if (scheduleTrip)
+            {
+                trip.stop.forEach(function(predictionStop){
+                    var schedulestop = scheduleTrip.stops.find(function(s_stop) {
+                        return s_stop.stop_name === predictionStop.stop_name;
+                    });
+                    //schedule only has the stops between the 2 stations.
+                    //prediction has stops before departure and beyond destination.
+                    if (schedulestop )
+                        schedulestop.prediction = predictionStop.pre_dt;
+                });
+
+            }
         });
     };
 
