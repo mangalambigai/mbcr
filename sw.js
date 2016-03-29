@@ -509,8 +509,8 @@ self._getScheduleByTrip = function(requestUrl){
             Promise.all( [tripStore.get(tripId), tripIndex.getAll(tripId)])
             .then(function (values) {
                 var ret = {
-                    route_name: values[0].routeName,
-                    trip_name: values[0].tripName,
+                    route_id: values[0].routeName,
+                    trip_id: values[0].tripName,
                     direction_name: values[0].direction,
                 };
 
