@@ -611,7 +611,7 @@ self.addEventListener('fetch', function (event) {
             if (requestUrl.pathname === '/schedulebystop') {
 
                 event.respondWith(fetch(event.request).then(function (response) {
-                    /*
+                    /******
                     //This would be a very good spot to clone response and
                     //cache the route, but we have to find out
                     //if the destination station falls in that route.
@@ -752,8 +752,8 @@ self._getScheduleByTrip = function (requestUrl) {
             var tripIndex = stopTimeStore.index('tripName');
             Promise.all([tripStore.get(tripId), tripIndex.getAll(tripId)]).then(function (values) {
                 var ret = {
-                    route_name: values[0].routeName,
-                    trip_name: values[0].tripName,
+                    route_id: values[0].routeName,
+                    trip_id: values[0].tripName,
                     direction_name: values[0].direction
                 };
 
